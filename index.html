@@ -23,6 +23,14 @@ body {
     font-family: 'Arial', sans-serif; /* Mantiene la fuente actual */
 }
 
+.skills .skill-item {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 1.5rem; /* Espacio entre cada skill */
+    width: 100%; /* Asegúrate de que las barras ocupen todo el ancho */
+}
+
 .hero {
     background-color: #d7c9b2; /* Beige suave con toque tierra */
     color: #3e2c1c; /* Gris oscuro-café */
@@ -41,7 +49,11 @@ body {
 .about, .skills, .projects, .experience, .certifications {
     background: url('https://www.freepik.es/vector-gratis/ilustracion-vector-patron-color-moderno_2904382.htm#fromView=keyword&page=1&position=10&uuid=3f9fee63-76bb-4592-ae45-44797c2eba93') no-repeat center center fixed;
     background-size: cover;
+    padding: 6rem 3rem; /* Incrementa el relleno */
+    min-height: 120vh; /* Aumenta la altura mínima */
+    margin-bottom: 3rem; /* Añade espacio entre secciones */
 }
+
 
 /* Estilo para la sección About */
 .about {
@@ -72,7 +84,7 @@ body {
 
 /* Estilos de las tarjetas */
 .card {
- 
+    height: 450px; /* Incrementa la altura de las tarjetas */
     margin-bottom: 2rem;
     display: flex;
     flex-direction: column;
@@ -84,8 +96,23 @@ body {
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     flex: 1 1 calc(33.33% - 1rem); /* Ajusta el tamaño de la tarjeta */
     margin: 1rem;
-    height: auto; /* Esto permite que las tarjetas se ajusten al contenido */
 }
+
+.skills .progress-bar {
+    width: 80%; /* Ajusta este valor para hacer la barra más larga */
+    max-width: 100%; /* Asegúrate de que no exceda el contenedor */
+    height: 25px; /* Aumenta la altura de la barra */
+    background-color: #5a4d41; /* Color de la barra */
+    border-radius: 10px; /* Bordes redondeados */
+}
+
+.skills .progress {
+    width: 100%; /* Asegúrate de que las barras ocupen todo el contenedor */
+    background-color: #e4d1b9; /* Fondo de la barra */
+    border-radius: 10px; /* Bordes redondeados */
+    overflow: hidden; /* Asegura que la barra no se salga */
+}
+
 
 /* Contenedor de la imagen en la tarjeta */
 .card-img-top {
@@ -237,6 +264,8 @@ a:hover {
     flex: 1 1 calc(33.33% - 20px); /* Ensures 3 cards per row */
     margin-bottom: 20px;
     height: 400px; /* Set a fixed height for all cards */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Cambié el tamaño y la opacidad de la sombra */
+
 }
 
 .card img {
@@ -374,98 +403,130 @@ section h2 {
     </div>
   </section>
 
-
-<!-- Skills Section -->
-<section id="skills" class="skills" data-aos="fade-left" data-aos-duration="1500">
+  <section id="skills" class="skills" data-aos="fade-left" data-aos-duration="1500">
     <div class="container">
         <h2 class="text-center mb-5">Skills</h2>
         <div class="row">
+            <!-- Python -->
             <div class="col-md-4">
                 <div class="card text-center">
                     <div class="card-body">
                         <i class="fab fa-python fa-3x"></i>
                         <h5 class="card-title mt-3">Python</h5>
-                        <p class="card-text">Used for web development (Django, Flask), data analytics, processing, modeling, and telematics.</p>
+                        <p class="card-text">Focused on web development (Django, Flask), data analytics, processing, modeling, and telematics.</p>
+                        <div class="progress" style="height: 25px; margin-top: 10px;">
+                            <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" style="width: 90%; background-color: #5a4d41;" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100">90%</div>
+                        </div>
                     </div>
                 </div>
             </div>
+            <!-- R -->
             <div class="col-md-4">
                 <div class="card text-center">
                     <div class="card-body">
                         <i class="fas fa-chart-line fa-3x"></i>
                         <h5 class="card-title mt-3">R</h5>
-                        <p class="card-text">Used for data analytics, prediction, and model creation.</p>
+                        <p class="card-text">With main experience on data analytics, prediction, and model creation.</p>
+                        <div class="progress" style="height: 25px; margin-top: 10px;">
+                            <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" style="width: 85%; background-color: #5a4d41;" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100">85%</div>
+                        </div>
                     </div>
                 </div>
             </div>
+            <!-- MySQL -->
             <div class="col-md-4">
                 <div class="card text-center">
                     <div class="card-body">
                         <i class="fas fa-database fa-3x"></i>
                         <h5 class="card-title mt-3">MySQL</h5>
-                        <p class="card-text">Used for database creation, connecting web pages to databases, and data processing.</p>
+                        <p class="card-text">With the main purpose of creating databases, connecting them to web pages, and data processing.</p>
+                        <div class="progress" style="height: 25px; margin-top: 10px;">
+                            <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" style="width: 80%; background-color: #5a4d41;" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100">80%</div>
+                        </div>
                     </div>
                 </div>
             </div>
+            <!-- Java -->
             <div class="col-md-4">
                 <div class="card text-center">
                     <div class="card-body">
                         <i class="fas fa-cogs fa-3x"></i>
                         <h5 class="card-title mt-3">Java</h5>
-                        <p class="card-text">Used for backend development.</p>
+                        <p class="card-text">Experience on backend development and web applications.</p>
+                        <div class="progress" style="height: 25px; margin-top: 10px;">
+                            <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" style="width: 75%; background-color: #5a4d41;" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">75%</div>
+                        </div>
                     </div>
                 </div>
             </div>
+            <!-- HTML -->
             <div class="col-md-4">
                 <div class="card text-center">
                     <div class="card-body">
                         <i class="fab fa-html5 fa-3x"></i>
                         <h5 class="card-title mt-3">HTML</h5>
-                        <p class="card-text">Used for frontend development.</p>
+                        <p class="card-text">Experience on frontend development.</p>
+                        <div class="progress" style="height: 25px; margin-top: 10px;">
+                            <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" style="width: 95%; background-color: #5a4d41;" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100">95%</div>
+                        </div>
                     </div>
                 </div>
             </div>
+            <!-- JavaScript -->
             <div class="col-md-4">
                 <div class="card text-center">
                     <div class="card-body">
                         <i class="fab fa-js fa-3x"></i>
                         <h5 class="card-title mt-3">JavaScript</h5>
-                        <p class="card-text">Used for frontend development.</p>
+                        <p class="card-text">Experience on frontend development.</p>
+                        <div class="progress" style="height: 25px; margin-top: 10px;">
+                            <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" style="width: 90%; background-color: #5a4d41;" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100">90%</div>
+                        </div>
                     </div>
                 </div>
             </div>
+            <!-- AWS -->
             <div class="col-md-4">
                 <div class="card text-center">
                     <div class="card-body">
                         <i class="fab fa-aws fa-3x"></i>
                         <h5 class="card-title mt-3">AWS</h5>
-                        <p class="card-text">Used for peer-to-peer communication, deploying and hosting web pages, and implementing leader election algorithms.</p>
+                        <p class="card-text">Worked on peer-to-peer communication, networking protocols (TCP/IP), deploying web pages, and implementing leader election algorithms.</p>
+                        <div class="progress" style="height: 25px; margin-top: 10px;">
+                            <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" style="width: 70%; background-color: #5a4d41;" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100">70%</div>
+                        </div>
                     </div>
                 </div>
             </div>
+            <!-- MATLAB -->
             <div class="col-md-4">
                 <div class="card text-center">
                     <div class="card-body">
-                        <i class="fas fa-calculator fa-3x"></i> <!-- Icono de matemáticas -->
+                        <i class="fas fa-calculator fa-3x"></i>
                         <h5 class="card-title mt-3">MATLAB</h5>
-                        <p class="card-text">Used for statistics, data analysis, differential equations, etc.</p>
+                        <p class="card-text">Mainly used for statistics, data analysis, differential equations, etc.</p>
+                        <div class="progress" style="height: 25px; margin-top: 10px;">
+                            <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" style="width: 60%; background-color: #5a4d41;" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100">60%</div>
+                        </div>
                     </div>
                 </div>
             </div>
-            <!-- C -->
+            <!-- C++ -->
             <div class="col-md-4">
                 <div class="card text-center">
                     <div class="card-body">
                         <i class="fab fa-c fa-3x"></i>
-                        <h5 class="card-title mt-3">C</h5>
-                        <p class="card-text">Used for system-level programming and low-level applications.</p>
+                        <h5 class="card-title mt-3">C++</h5>
+                        <p class="card-text">Worked on real-time interactions between web interfaces and hardware, system-level programming, and low-level applications.</p>
+                        <div class="progress" style="height: 25px; margin-top: 10px;">
+                            <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" style="width: 75%; background-color: #5a4d41;" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">75%</div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 </section>
-
 
     
 
