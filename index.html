@@ -72,7 +72,7 @@ body {
 
 /* Estilos de las tarjetas */
 .card {
-    margin: 0 10px 20px;
+ 
     margin-bottom: 2rem;
     display: flex;
     flex-direction: column;
@@ -82,7 +82,9 @@ body {
     padding: 1.5rem;
     border-radius: 10px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    flex: 1 1 calc(33.33% - 20px); /* Permite que 3 tarjetas estén por fila */
+    flex: 1 1 calc(33.33% - 1rem); /* Ajusta el tamaño de la tarjeta */
+    margin: 1rem;
+    height: auto; /* Esto permite que las tarjetas se ajusten al contenido */
 }
 
 /* Contenedor de la imagen en la tarjeta */
@@ -155,9 +157,10 @@ body {
 .projects .container {
     display: flex;
     justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
+    flex-wrap: wrap; /* Asegura que las tarjetas se acomoden bien */
+    gap: 1rem; /* Espacio entre las tarjetas */
 }
+
 
 .projects .card {
     margin: 1rem;
@@ -297,15 +300,23 @@ a:hover {
     text-align: center;
 }
 
-/* Estilos para los títulos de las secciones */
-section h2 {
-    font-size: 3rem; /* Aumenta el tamaño de la fuente */
-    color: #3e2c1c; /* Color que ya has utilizado para el texto */
-    margin-bottom: 2rem; /* Añade espacio debajo del título */
-    text-align: center; /* Centra los títulos */
-    letter-spacing: 2px; /* Agrega espaciado entre letras */
-    font-family: 'Arial', sans-serif; /* Mantiene la fuente actual */
+/* Asegurarse de que el contenedor del título esté centrado */
+.section-title-container {
+  display: flex;
+  justify-content: center;
+  width: 100%;
 }
+
+/* Estilo para los títulos de las secciones */
+section h2 {
+  font-size: 3rem; /* Aumenta el tamaño de la fuente */
+  color: #3e2c1c; /* Color que ya has utilizado para el texto */
+  margin-bottom: 2rem; /* Añade espacio debajo del título */
+  text-align: center; /* Centra los títulos */
+  letter-spacing: 2px; /* Agrega espaciado entre letras */
+  font-family: 'Arial', sans-serif; /* Mantiene la fuente actual */
+}
+
 
 /* Si necesitas que cada sección tenga su propio título, puedes usar las clases específicas */
 .about h2, .skills h2, .projects h2, .experience h2, .certifications h2 {
@@ -516,10 +527,13 @@ section h2 {
     </div>
 </section>
 
-  <!-- Projects Section -->
-  <section id="projects" class="projects" data-aos="fade-left" data-aos-duration="1500">
+<!-- Projects Section -->
+<section id="projects" class="projects" data-aos="fade-left" data-aos-duration="1500">
     <div class="container">
-      <h2 class="text-center mb-5">Projects</h2>
+      <!-- Contenedor para centrar el título -->
+      <div class="section-title-container">
+        <h2 class="text-center mb-5">Projects</h2>
+      </div>
       <div class="row justify-content-center">
         <div class="col-md-4">
           <div class="card">
@@ -560,7 +574,7 @@ section h2 {
       </div>
     </div>
   </section>
-
+  
 
 
 <!-- Certifications Section -->
