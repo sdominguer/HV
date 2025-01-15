@@ -1,0 +1,703 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Resume - Sara Domínguez</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <!-- AOS Animation Library -->
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+  <style>
+/* Elimina márgenes y rellenos globalmente */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    overflow-x: hidden; /* Evita el desplazamiento horizontal */
+    background-color: #f4f1ea; /* Beige claro */
+    color: #5a4d41; /* Gris oscuro-terroso */
+    font-family: 'Arial', sans-serif; /* Mantiene la fuente actual */
+}
+
+.hero {
+    background-color: #d7c9b2; /* Beige suave con toque tierra */
+    color: #3e2c1c; /* Gris oscuro-café */
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.about, .skills, .projects, .experience, .certifications {
+    padding: 4rem 2rem;
+}
+
+/* Fondo de la sección About y siguientes secciones */
+.about, .skills, .projects, .experience, .certifications {
+    background: url('https://www.freepik.es/vector-gratis/ilustracion-vector-patron-color-moderno_2904382.htm#fromView=keyword&page=1&position=10&uuid=3f9fee63-76bb-4592-ae45-44797c2eba93') no-repeat center center fixed;
+    background-size: cover;
+}
+
+/* Estilo para la sección About */
+.about {
+
+    text-align: center;
+    position: relative;
+}
+
+.about::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    z-index: -1; /* Poner el fondo detrás del contenido */
+}
+
+.projects {
+    background-color: #e4d1b9; /* Beige suave y cálido */
+}
+
+.skills {
+    background-color: #e4d1b9; /* Beige tierra */
+}
+
+
+/* Estilos de las tarjetas */
+.card {
+    margin: 0 10px 20px;
+    margin-bottom: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #f3ebe0; /* Beige claro */
+    padding: 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    flex: 1 1 calc(33.33% - 20px); /* Permite que 3 tarjetas estén por fila */
+}
+
+/* Contenedor de la imagen en la tarjeta */
+.card-img-top {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 200px; /* Establece una altura fija */
+    background: #f8f9fa; /* Fondo blanco claro */
+}
+
+/* Estilos para las imágenes de los proyectos */
+.project-img {
+    width: 100%;  /* Asegura que las imágenes ocupen todo el ancho */
+    height: 100%; /* Establece que la imagen ocupe toda la altura del contenedor */
+    object-fit: cover; /* Ajusta la imagen para cubrir todo el área sin distorsionar */
+    object-position: center; /* Asegura que la imagen se recorte desde el centro */
+}
+
+
+.btn-github {
+    background-color: #d7c9b2; /* Beige tierra */
+    color: white;
+}
+
+.btn-github:hover {
+    background-color: #b69a7d; /* Beige más oscuro */
+}
+
+.btn-github i {
+    margin-left: 0.5rem;
+}
+
+.btn-github, .btn-linkedin {
+    transition: transform 0.2s ease-in-out;
+}
+
+.btn-github:hover, .btn-linkedin:hover {
+    transform: translateY(-5px);
+}
+
+.edu-list {
+    list-style: none;
+    padding: 0;
+}
+
+.edu-list li {
+    margin-bottom: 10px;
+}
+
+.edu-img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+
+.hero .fab {
+    animation: bounce 1.5s ease-in-out infinite;
+}
+
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+.projects .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.projects .card {
+    margin: 1rem;
+    width: 18rem;
+    text-align: center;
+}
+
+.certification-img {
+    width: 50px;
+    height: 50px;
+    margin-right: 10px;
+}
+
+.certifications .certification-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+/* Cambiar colores de enlaces y botones */
+a {
+    color: #5a4d41; /* Gris oscuro-terroso */
+}
+
+a:hover {
+    color: #3e2c1c; /* Gris más oscuro-café */
+}
+
+.navbar {
+    background-color: #d7c9b2; /* Beige tierra */
+}
+
+.navbar a {
+    color: #3e2c1c; /* Gris oscuro-café */
+}
+
+.navbar a:hover {
+    color: #3e2c1c; /* Gris más oscuro-café */
+}
+
+.carousel-item {
+    padding: 20px;
+}
+
+.d-flex {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.card {
+    flex: 1 1 calc(33.33% - 20px); /* Allows 3 cards per row */
+    margin-bottom: 20px;
+}
+
+.card img {
+    max-height: 200px;
+    object-fit: cover;
+}
+
+.carousel-item {
+    padding: 20px;
+}
+
+.d-flex {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.card {
+    flex: 1 1 calc(33.33% - 20px); /* Ensures 3 cards per row */
+    margin-bottom: 20px;
+    height: 400px; /* Set a fixed height for all cards */
+}
+
+.card img {
+    height: 200px; /* Fixed height for images */
+    object-fit: cover;
+}
+
+.carousel-item {
+    padding: 20px;
+}
+
+.d-flex {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.card {
+    flex: 1 1 calc(33.33% - 20px); /* Ensures 3 cards per row */
+    margin-bottom: 20px;
+    height: 400px; /* Set a fixed height for all cards */
+}
+
+.carousel-control-prev-icon, .carousel-control-next-icon {
+    background-color: black;
+}
+
+.carousel-control-prev, .carousel-control-next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 5%;
+}
+
+.carousel-control-prev {
+    left: 0;
+}
+
+.carousel-control-next {
+    right: 0;
+}
+
+/* Style for buttons */
+.btn-success {
+    background-color: #d7c9b2; /* Custom green color */
+    border-color: #d7c9b2;
+}
+
+.btn-success:hover {
+    background-color: #d7c9b2; /* Darker green on hover */
+    border-color: #d7c9b2;
+}
+
+/* Center text inside the cards */
+.card-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+/* Estilos para los títulos de las secciones */
+section h2 {
+    font-size: 3rem; /* Aumenta el tamaño de la fuente */
+    color: #3e2c1c; /* Color que ya has utilizado para el texto */
+    margin-bottom: 2rem; /* Añade espacio debajo del título */
+    text-align: center; /* Centra los títulos */
+    letter-spacing: 2px; /* Agrega espaciado entre letras */
+    font-family: 'Arial', sans-serif; /* Mantiene la fuente actual */
+}
+
+/* Si necesitas que cada sección tenga su propio título, puedes usar las clases específicas */
+.about h2, .skills h2, .projects h2, .experience h2, .certifications h2 {
+    font-size: 3rem;
+    color: #3e2c1c;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 2rem;
+    letter-spacing: 1px;
+    font-family: 'Arial', sans-serif; /* Mantiene la fuente actual */
+}
+
+</style>
+
+
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">Sara Dominguez</a>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item"><a class="nav-link" href="#about">About Me</a></li>
+          <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
+          <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
+          <li class="nav-item"><a class="nav-link" href="#experience">Experience</a></li>
+          <li class="nav-item"><a class="nav-link" href="#certifications">Certifications</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <div class="hero" data-aos="fade-up">
+    <p class="h5">Hi, my name is</p>
+    <h1>Sara Domínguez</h1>
+    <h2>Software Developer</h2>
+    <div class="mt-3">
+      <!-- GitHub and LinkedIn icons that will bounce -->
+      <a href="https://www.linkedin.com/in/sara-dominguezr" target="_blank" class="text-white me-3 btn-linkedin" data-aos="zoom-in" data-aos-delay="100"><i class="fab fa-linkedin fa-2x"></i></a>
+      <a href="https://github.com/sdominguer" target="_blank" class="text-white btn-github" data-aos="zoom-in" data-aos-delay="200"><i class="fab fa-github fa-2x"></i></a>
+    </div>
+  </div>
+
+  <!-- About Section -->
+  <section id="about" class="about" data-aos="fade-left" data-aos-duration="1500">
+    <div class="container">
+      <h2 class="mb-5">About Me</h2>
+      <p>I am Sara Dominguez, a software developer passionate about creating innovative solutions. I have experience in web development, data analytics, and machine learning. My goal is to combine technology and creativity to make a positive impact.</p>
+      <h3 class="mt-5">Education</h3>
+      <ul class="edu-list">
+        <li><strong>Systems Engineering</strong> - EAFIT (Started in 2021)</li>
+        <li><strong>Mathematical Engineering</strong> - EAFIT (Started in 2023)</li>
+      </ul>
+    </div>
+  </section>
+
+
+<!-- Skills Section -->
+<section id="skills" class="skills" data-aos="fade-left" data-aos-duration="1500">
+    <div class="container">
+        <h2 class="text-center mb-5">Skills</h2>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="card text-center">
+                    <div class="card-body">
+                        <i class="fab fa-python fa-3x"></i>
+                        <h5 class="card-title mt-3">Python</h5>
+                        <p class="card-text">Used for web development (Django, Flask), data analytics, processing, modeling, and telematics.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card text-center">
+                    <div class="card-body">
+                        <i class="fas fa-chart-line fa-3x"></i>
+                        <h5 class="card-title mt-3">R</h5>
+                        <p class="card-text">Used for data analytics, prediction, and model creation.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card text-center">
+                    <div class="card-body">
+                        <i class="fas fa-database fa-3x"></i>
+                        <h5 class="card-title mt-3">MySQL</h5>
+                        <p class="card-text">Used for database creation, connecting web pages to databases, and data processing.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card text-center">
+                    <div class="card-body">
+                        <i class="fas fa-cogs fa-3x"></i>
+                        <h5 class="card-title mt-3">Java</h5>
+                        <p class="card-text">Used for backend development.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card text-center">
+                    <div class="card-body">
+                        <i class="fab fa-html5 fa-3x"></i>
+                        <h5 class="card-title mt-3">HTML</h5>
+                        <p class="card-text">Used for frontend development.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card text-center">
+                    <div class="card-body">
+                        <i class="fab fa-js fa-3x"></i>
+                        <h5 class="card-title mt-3">JavaScript</h5>
+                        <p class="card-text">Used for frontend development.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card text-center">
+                    <div class="card-body">
+                        <i class="fab fa-aws fa-3x"></i>
+                        <h5 class="card-title mt-3">AWS</h5>
+                        <p class="card-text">Used for peer-to-peer communication, deploying and hosting web pages, and implementing leader election algorithms.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card text-center">
+                    <div class="card-body">
+                        <i class="fas fa-calculator fa-3x"></i> <!-- Icono de matemáticas -->
+                        <h5 class="card-title mt-3">MATLAB</h5>
+                        <p class="card-text">Used for statistics, data analysis, differential equations, etc.</p>
+                    </div>
+                </div>
+            </div>
+            <!-- C -->
+            <div class="col-md-4">
+                <div class="card text-center">
+                    <div class="card-body">
+                        <i class="fab fa-c fa-3x"></i>
+                        <h5 class="card-title mt-3">C</h5>
+                        <p class="card-text">Used for system-level programming and low-level applications.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+    
+
+  <!-- Experience Section -->
+<section id="experience" class="experience" data-aos="fade-left" data-aos-duration="1500" style="background-color: e4d1b9;">
+    <div class="container">
+        <h2 class="text-center mb-5">Experience</h2>
+
+        <!-- Bootstrap Carousel -->
+        <div id="experienceCarousel" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                <!-- First Slide -->
+                <div class="carousel-item active">
+                    <div class="d-flex justify-content-center">
+                        <div class="card" style="width: 18rem;">
+                            <div class="card-body">
+                                <h5 class="card-title">Company 1 (2020-2021)</h5>
+                                <p class="card-text">Worked on developing web applications with Python, Django, and Flask. Involved in data analysis and telematics systems.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Second Slide -->
+                <div class="carousel-item">
+                    <div class="d-flex justify-content-center">
+                        <div class="card" style="width: 18rem;">
+                            <div class="card-body">
+                                <h5 class="card-title">Company 2 (2021-2022)</h5>
+                                <p class="card-text">Developed algorithms for data processing and implemented consensus algorithms using Python and AWS.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Third Slide -->
+                <div class="carousel-item">
+                    <div class="d-flex justify-content-center">
+                        <div class="card" style="width: 18rem;">
+                            <div class="card-body">
+                                <h5 class="card-title">Company 3 (2022-Present)</h5>
+                                <p class="card-text">Currently working as a software engineer developing full-stack solutions for data analytics and web applications.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Carousel Controls -->
+            <button class="carousel-control-prev" type="button" data-bs-target="#experienceCarousel" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#experienceCarousel" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+    </div>
+</section>
+
+  <!-- Projects Section -->
+  <section id="projects" class="projects" data-aos="fade-left" data-aos-duration="1500">
+    <div class="container">
+      <h2 class="text-center mb-5">Projects</h2>
+      <div class="row justify-content-center">
+        <div class="col-md-4">
+          <div class="card">
+            <div class="card-img-top d-flex justify-content-center align-items-center" style="height: 200px; background: #f8f9fa;">
+              <img src="artenativo.jpg" alt="Artenativo" class="project-img">
+            </div>
+            <div class="card-body">
+              <h5 class="card-title">Artenativo</h5>
+              <p class="card-text">Web application in Flask for selling and auctioning Colombian handicrafts.</p>
+              <a href="https://github.com/sdominguer/ArteNativo2" target="_blank" class="btn btn-github">View Repository <i class="fab fa-github"></i></a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card">
+            <div class="card-img-top d-flex justify-content-center align-items-center" style="height: 200px; background: #f8f9fa;">
+              <img src="julia.png" alt="Julia Diagrams" class="project-img">
+            </div>
+            <div class="card-body">
+              <h5 class="card-title">Julia Diagrams</h5>
+              <p class="card-text">Class diagram generator for Julia code.</p>
+              <a href="https://github.com/sdominguer/Diagrama_Julia" target="_blank" class="btn btn-github">View Repository <i class="fab fa-github"></i></a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card">
+            <div class="card-img-top d-flex justify-content-center align-items-center" style="height: 200px; background: #f8f9fa;">
+              <img src="airedellin.png" alt="Airedellin" class="project-img">
+            </div>
+            <div class="card-body">
+              <h5 class="card-title">Airedellin</h5>
+              <p class="card-text">Air quality prediction models.</p>
+              <a href="https://github.com/sdominguer/Airedellin-front" target="_blank" class="btn btn-github">View Repository <i class="fab fa-github"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+<!-- Certifications Section -->
+<section id="certifications" class="certifications" data-aos="fade-left" data-aos-duration="1500">
+    <div class="container">
+        <h2 class="text-center mb-5">Certifications</h2>
+
+        <!-- Bootstrap Carousel -->
+        <div id="certificationCarousel" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                <!-- First Slide -->
+                <div class="carousel-item active">
+                    <div class="d-flex justify-content-between">
+                        <!-- Certification Item 1 -->
+                        <div class="card" style="width: 18rem;">
+                            <div class="card-body">
+                                <h5 class="card-title">Curso Básico de Django</h5>
+                                <p class="card-text">Issued Nov 2024 - Netzun</p>
+                                <p>Skills: Django · Databases</p>
+                                <a href="https://www.linkedin.com/in/sara-dominguezr/details/certifications/1732074373953/single-media-viewer/?profileId=ACoAACkWugIBgGWWK4CX2JUd39JtvlGHResLNKk" class="btn btn-success" target="_blank">View Certification</a>
+                            </div>
+                        </div>
+
+                        <!-- Certification Item 2 -->
+                        <div class="card" style="width: 18rem;">
+                            <div class="card-body">
+                                <h5 class="card-title">Desarrollo en Python Avanzado</h5>
+                                <p class="card-text">Issued Nov 2024 - Netzun</p>
+                                <p>Skills: Python · Object-Oriented Programming (OOP) · JSON</p>
+                                <a href="https://www.linkedin.com/in/sara-dominguezr/details/certifications/1732068555519/single-media-viewer/?profileId=ACoAACkWugIBgGWWK4CX2JUd39JtvlGHResLNKk" class="btn btn-success" target="_blank">View Certification</a>
+                            </div>
+                        </div>
+
+                        <!-- Certification Item 3 -->
+                        <div class="card" style="width: 18rem;">
+                            <div class="card-body">
+                                <h5 class="card-title">Fundamentos de Python</h5>
+                                <p class="card-text">Issued Jun 2024 - Netzun</p>
+                                <p>Skills: Python (Programming Language)</p>
+                                <a href="https://www.linkedin.com/in/sara-dominguezr/details/certifications/1719186466864/single-media-viewer/?profileId=ACoAACkWugIBgGWWK4CX2JUd39JtvlGHResLNKk" class="btn btn-success" target="_blank">View Certification</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Second Slide -->
+                <div class="carousel-item">
+                    <div class="d-flex justify-content-between">
+                        <!-- Certification Item 4 -->
+                        <div class="card" style="width: 18rem;">
+                            <div class="card-body">
+                                <h5 class="card-title">Git y GitHub profesional</h5>
+                                <p class="card-text">Issued Jun 2024 - Netzun</p>
+                                <p>Skills: Git · GitHub</p>
+                                <a href="https://www.linkedin.com/in/sara-dominguezr/details/certifications/1719176483753/single-media-viewer/?profileId=ACoAACkWugIBgGWWK4CX2JUd39JtvlGHResLNKk" class="btn btn-success" target="_blank">View Certification</a>
+                            </div>
+                        </div>
+
+                        <!-- Certification Item 5 -->
+                        <div class="card" style="width: 18rem;">
+                            <div class="card-body">
+                                <h5 class="card-title">Python Intermedio</h5>
+                                <p class="card-text">Issued Jun 2024 - Netzun</p>
+                                <p>Skills: Python (Programming Language)</p>
+                                <a href="https://www.linkedin.com/in/sara-dominguezr/details/certifications/1719357145986/single-media-viewer/?profileId=ACoAACkWugIBgGWWK4CX2JUd39JtvlGHResLNKk" class="btn btn-success" target="_blank">View Certification</a>
+                            </div>
+                        </div>
+
+                        <!-- Certification Item 6 -->
+                        <div class="card" style="width: 18rem;">
+                            <div class="card-body">
+                                <h5 class="card-title">MySQL 5.6 Developer</h5>
+                                <p class="card-text">Issued Sep 2023, Expired Dec 2023 - Sapiencia</p>
+                                <p>Skills: Data Entry · Oracle Database · SQL · Data Analysis · MongoDB · Back-End Web Development · Microsoft SQL Server · Front-End Development</p>
+                                <a href="https://www.linkedin.com/in/sara-dominguezr/details/certifications/1635554661906/single-media-viewer/?profileId=ACoAACkWugIBgGWWK4CX2JUd39JtvlGHResLNKk" class="btn btn-success" target="_blank">View Certification</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Third Slide -->
+                <div class="carousel-item">
+                    <div class="d-flex justify-content-between">
+                        <!-- Certification Item 7 -->
+                        <div class="card" style="width: 18rem;">
+                            <div class="card-body">
+                                <h5 class="card-title">Nodo bootcamp</h5>
+                                <p class="card-text">Issued Jul 2023 - PRAGMA</p>
+                                <p>Skills: Software Design · HTML · Software Development · Data Structures · Back-End Web Development · Django · Teamwork · Team Leadership · Front-End Development</p>
+                                <a href="https://www.linkedin.com/in/sara-dominguezr/details/certifications/1635554669069/single-media-viewer/?profileId=ACoAACkWugIBgGWWK4CX2JUd39JtvlGHResLNKk" class="btn btn-success" target="_blank">View Certification</a>
+                            </div>
+                        </div>
+
+                        <!-- Certification Item 8 -->
+                        <div class="card" style="width: 18rem;">
+                            <div class="card-body">
+                                <h5 class="card-title">Fundamentos de desarrollo de aplicaciones</h5>
+                                <p class="card-text">Issued Aug 2019, Expired Sep 2019 - Escuela de Ingeniería de Antioquia</p>
+                                <p>Skills: Software Design · Software Development · Front-End Development</p>
+                                <a href="https://www.linkedin.com/in/sara-dominguezr/details/certifications/1704915133469/single-media-viewer/?profileId=ACoAACkWugIBgGWWK4CX2JUd39JtvlGHResLNKk" class="btn btn-success" target="_blank">View Certification</a>
+                            </div>
+                        </div>
+
+                        <!-- Certification Item 9 -->
+                        <div class="card" style="width: 18rem;">
+                            <div class="card-body">
+                                <h5 class="card-title">Introduction to network management</h5>
+                                <p class="card-text">Issued Feb 2024, Expired Mar 2024 - Lacnic campus</p>
+                                <p>Skills: Telematics · Internet of Things (IoT)</p>
+                                <a href="https://www.linkedin.com/in/sara-dominguezr/details/certifications/1710288180102/single-media-viewer/?profileId=ACoAACkWugIBgGWWK4CX2JUd39JtvlGHResLNKk" class="btn btn-success" target="_blank">View Certification</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Carousel Controls -->
+            <button class="carousel-control-prev" type="button" data-bs-target="#certificationCarousel" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#certificationCarousel" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+    </div>
+</section>
+  
+
+  
+
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    AOS.init();
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
+</body>
+</html>
