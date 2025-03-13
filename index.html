@@ -358,6 +358,50 @@ section h2 {
     font-family: 'Arial', sans-serif; /* Mantiene la fuente actual */
 }
 
+/* Certifications Section */
+.certifications {
+    padding: 4rem 2rem;
+}
+
+.certifications-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* Centra las tarjetas horizontalmente */
+    gap: 20px; /* Espacio entre las tarjetas */
+}
+
+.card {
+    flex: 1 1 calc(33.33% - 20px); /* 3 tarjetas por fila con espacio entre ellas */
+    margin-bottom: 20px;
+    height: 400px; /* Set a fixed height for all cards */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Cambié el tamaño y la opacidad de la sombra */
+
+}
+
+.card img {
+    height: 200px; /* Fixed height for images */
+    object-fit: cover;
+}
+
+@media (max-width: 768px) {
+    .certifications-container {
+        flex-direction: column; /* Apila las tarjetas verticalmente en pantallas pequeñas */
+        align-items: center; /* Centra las tarjetas en pantallas pequeñas */
+    }
+
+    .card {
+        width: 100%; /* Las tarjetas ocupan todo el ancho en pantallas pequeñas */
+    }
+}
+
+.card-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Espacio entre los elementos */
+    align-items: center;
+    text-align: center;
+}
+
 </style>
 
 
@@ -661,128 +705,102 @@ section h2 {
 
 
 <!-- Certifications Section -->
+<!-- Certifications Section -->
 <section id="certifications" class="certifications" data-aos="fade-left" data-aos-duration="1500">
     <div class="container">
         <h2 class="text-center mb-5">Certifications</h2>
 
-        <!-- Bootstrap Carousel -->
-        <div id="certificationCarousel" class="carousel slide" data-bs-ride="carousel">
-            <div class="carousel-inner">
-                <!-- First Slide -->
-                <div class="carousel-item active">
-                    <div class="d-flex justify-content-between">
-                        <!-- Certification Item 1 -->
-                        <div class="card" style="width: 18rem;">
-                            <div class="card-body">
-                                <h5 class="card-title">Curso Básico de Django</h5>
-                                <p class="card-text">Issued Nov 2024 - Netzun</p>
-                                <p>Skills: Django · Databases</p>
-                                <a href="https://www.linkedin.com/in/sara-dominguezr/details/certifications/1732074373953/single-media-viewer/?profileId=ACoAACkWugIBgGWWK4CX2JUd39JtvlGHResLNKk" class="btn btn-success" target="_blank">View Certification</a>
-                            </div>
-                        </div>
-
-                        <!-- Certification Item 2 -->
-                        <div class="card" style="width: 18rem;">
-                            <div class="card-body">
-                                <h5 class="card-title">Desarrollo en Python Avanzado</h5>
-                                <p class="card-text">Issued Nov 2024 - Netzun</p>
-                                <p>Skills: Python · Object-Oriented Programming (OOP) · JSON</p>
-                                <a href="https://www.linkedin.com/in/sara-dominguezr/details/certifications/1732068555519/single-media-viewer/?profileId=ACoAACkWugIBgGWWK4CX2JUd39JtvlGHResLNKk" class="btn btn-success" target="_blank">View Certification</a>
-                            </div>
-                        </div>
-
-                        <!-- Certification Item 3 -->
-                        <div class="card" style="width: 18rem;">
-                            <div class="card-body">
-                                <h5 class="card-title">Fundamentos de Python</h5>
-                                <p class="card-text">Issued Jun 2024 - Netzun</p>
-                                <p>Skills: Python (Programming Language)</p>
-                                <a href="https://www.linkedin.com/in/sara-dominguezr/details/certifications/1719186466864/single-media-viewer/?profileId=ACoAACkWugIBgGWWK4CX2JUd39JtvlGHResLNKk" class="btn btn-success" target="_blank">View Certification</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Second Slide -->
-                <div class="carousel-item">
-                    <div class="d-flex justify-content-between">
-                        <!-- Certification Item 4 -->
-                        <div class="card" style="width: 18rem;">
-                            <div class="card-body">
-                                <h5 class="card-title">Git y GitHub profesional</h5>
-                                <p class="card-text">Issued Jun 2024 - Netzun</p>
-                                <p>Skills: Git · GitHub</p>
-                                <a href="https://www.linkedin.com/in/sara-dominguezr/details/certifications/1719176483753/single-media-viewer/?profileId=ACoAACkWugIBgGWWK4CX2JUd39JtvlGHResLNKk" class="btn btn-success" target="_blank">View Certification</a>
-                            </div>
-                        </div>
-
-                        <!-- Certification Item 5 -->
-                        <div class="card" style="width: 18rem;">
-                            <div class="card-body">
-                                <h5 class="card-title">Python Intermedio</h5>
-                                <p class="card-text">Issued Jun 2024 - Netzun</p>
-                                <p>Skills: Python (Programming Language)</p>
-                                <a href="https://www.linkedin.com/in/sara-dominguezr/details/certifications/1719357145986/single-media-viewer/?profileId=ACoAACkWugIBgGWWK4CX2JUd39JtvlGHResLNKk" class="btn btn-success" target="_blank">View Certification</a>
-                            </div>
-                        </div>
-
-                        <!-- Certification Item 6 -->
-                        <div class="card" style="width: 18rem;">
-                            <div class="card-body">
-                                <h5 class="card-title">MySQL 5.6 Developer</h5>
-                                <p class="card-text">Issued Sep 2023, Expired Dec 2023 - Sapiencia</p>
-                                <p>Skills: Data Entry · Oracle Database · SQL · Data Analysis · MongoDB · Back-End Web Development · Microsoft SQL Server · Front-End Development</p>
-                                <a href="https://www.linkedin.com/in/sara-dominguezr/details/certifications/1635554661906/single-media-viewer/?profileId=ACoAACkWugIBgGWWK4CX2JUd39JtvlGHResLNKk" class="btn btn-success" target="_blank">View Certification</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Third Slide -->
-                <div class="carousel-item">
-                    <div class="d-flex justify-content-between">
-                        <!-- Certification Item 7 -->
-                        <div class="card" style="width: 18rem;">
-                            <div class="card-body">
-                                <h5 class="card-title">Nodo bootcamp</h5>
-                                <p class="card-text">Issued Jul 2023 - PRAGMA</p>
-                                <p>Skills: Software Design · HTML · Software Development · Data Structures · Back-End Web Development · Django · Teamwork · Team Leadership · Front-End Development</p>
-                                <a href="https://www.linkedin.com/in/sara-dominguezr/details/certifications/1635554669069/single-media-viewer/?profileId=ACoAACkWugIBgGWWK4CX2JUd39JtvlGHResLNKk" class="btn btn-success" target="_blank">View Certification</a>
-                            </div>
-                        </div>
-
-                        <!-- Certification Item 8 -->
-                        <div class="card" style="width: 18rem;">
-                            <div class="card-body">
-                                <h5 class="card-title">Fundamentos de desarrollo de aplicaciones</h5>
-                                <p class="card-text">Issued Aug 2019, Expired Sep 2019 - Escuela de Ingeniería de Antioquia</p>
-                                <p>Skills: Software Design · Software Development · Front-End Development</p>
-                                <a href="https://www.linkedin.com/in/sara-dominguezr/details/certifications/1704915133469/single-media-viewer/?profileId=ACoAACkWugIBgGWWK4CX2JUd39JtvlGHResLNKk" class="btn btn-success" target="_blank">View Certification</a>
-                            </div>
-                        </div>
-
-                        <!-- Certification Item 9 -->
-                        <div class="card" style="width: 18rem;">
-                            <div class="card-body">
-                                <h5 class="card-title">Introduction to network management</h5>
-                                <p class="card-text">Issued Feb 2024, Expired Mar 2024 - Lacnic campus</p>
-                                <p>Skills: Telematics · Internet of Things (IoT)</p>
-                                <a href="https://www.linkedin.com/in/sara-dominguezr/details/certifications/1710288180102/single-media-viewer/?profileId=ACoAACkWugIBgGWWK4CX2JUd39JtvlGHResLNKk" class="btn btn-success" target="_blank">View Certification</a>
-                            </div>
-                        </div>
-                    </div>
+        <!-- Certification Container -->
+        <div class="certifications-container">
+            <!-- Certification Item 1 -->
+            <div class="card" style="width: 18rem;">
+                <div class="card-body">
+                    <h5 class="card-title">Curso Básico de Django</h5>
+                    <p class="card-text">Issued Nov 2024 - Netzun</p>
+                    <p>Skills: Django · Databases</p>
+                    <a href="https://www.linkedin.com/in/sara-dominguezr/details/certifications/1732074373953/single-media-viewer/?profileId=ACoAACkWugIBgGWWK4CX2JUd39JtvlGHResLNKk" class="btn btn-success" target="_blank">View Certification</a>
                 </div>
             </div>
 
-            <!-- Carousel Controls -->
-            <button class="carousel-control-prev" type="button" data-bs-target="#certificationCarousel" data-bs-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Previous</span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#certificationCarousel" data-bs-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Next</span>
-            </button>
+            <!-- Certification Item 2 -->
+            <div class="card" style="width: 18rem;">
+                <div class="card-body">
+                    <h5 class="card-title">Desarrollo en Python Avanzado</h5>
+                    <p class="card-text">Issued Nov 2024 - Netzun</p>
+                    <p>Skills: Python · Object-Oriented Programming (OOP) · JSON</p>
+                    <a href="https://www.linkedin.com/in/sara-dominguezr/details/certifications/1732068555519/single-media-viewer/?profileId=ACoAACkWugIBgGWWK4CX2JUd39JtvlGHResLNKk" class="btn btn-success" target="_blank">View Certification</a>
+                </div>
+            </div>
+
+            <!-- Certification Item 3 -->
+            <div class="card" style="width: 18rem;">
+                <div class="card-body">
+                    <h5 class="card-title">Fundamentos de Python</h5>
+                    <p class="card-text">Issued Jun 2024 - Netzun</p>
+                    <p>Skills: Python (Programming Language)</p>
+                    <a href="https://www.linkedin.com/in/sara-dominguezr/details/certifications/1719186466864/single-media-viewer/?profileId=ACoAACkWugIBgGWWK4CX2JUd39JtvlGHResLNKk" class="btn btn-success" target="_blank">View Certification</a>
+                </div>
+            </div>
+
+            <!-- Certification Item 4 -->
+            <div class="card" style="width: 18rem;">
+                <div class="card-body">
+                    <h5 class="card-title">Git y GitHub profesional</h5>
+                    <p class="card-text">Issued Jun 2024 - Netzun</p>
+                    <p>Skills: Git · GitHub</p>
+                    <a href="https://www.linkedin.com/in/sara-dominguezr/details/certifications/1719176483753/single-media-viewer/?profileId=ACoAACkWugIBgGWWK4CX2JUd39JtvlGHResLNKk" class="btn btn-success" target="_blank">View Certification</a>
+                </div>
+            </div>
+
+            <!-- Certification Item 5 -->
+            <div class="card" style="width: 18rem;">
+                <div class="card-body">
+                    <h5 class="card-title">Python Intermedio</h5>
+                    <p class="card-text">Issued Jun 2024 - Netzun</p>
+                    <p>Skills: Python (Programming Language)</p>
+                    <a href="https://www.linkedin.com/in/sara-dominguezr/details/certifications/1719357145986/single-media-viewer/?profileId=ACoAACkWugIBgGWWK4CX2JUd39JtvlGHResLNKk" class="btn btn-success" target="_blank">View Certification</a>
+                </div>
+            </div>
+
+            <!-- Certification Item 6 -->
+            <div class="card" style="width: 18rem;">
+                <div class="card-body">
+                    <h5 class="card-title">MySQL 5.6 Developer</h5>
+                    <p class="card-text">Issued Sep 2023, Expired Dec 2023 - Sapiencia</p>
+                    <p>Skills: Data Entry · Oracle Database · SQL · Data Analysis · MongoDB · Back-End Web Development · Microsoft SQL Server · Front-End Development</p>
+                    <a href="https://www.linkedin.com/in/sara-dominguezr/details/certifications/1635554661906/single-media-viewer/?profileId=ACoAACkWugIBgGWWK4CX2JUd39JtvlGHResLNKk" class="btn btn-success" target="_blank">View Certification</a>
+                </div>
+            </div>
+
+            <!-- Certification Item 7 -->
+            <div class="card" style="width: 18rem;">
+                <div class="card-body">
+                    <h5 class="card-title">Nodo bootcamp</h5>
+                    <p class="card-text">Issued Jul 2023 - PRAGMA</p>
+                    <p>Skills: Software Design · HTML · Software Development · Data Structures · Back-End Web Development · Django · Teamwork · Team Leadership · Front-End Development</p>
+                    <a href="https://www.linkedin.com/in/sara-dominguezr/details/certifications/1635554669069/single-media-viewer/?profileId=ACoAACkWugIBgGWWK4CX2JUd39JtvlGHResLNKk" class="btn btn-success" target="_blank">View Certification</a>
+                </div>
+            </div>
+
+            <!-- Certification Item 8 -->
+            <div class="card" style="width: 18rem;">
+                <div class="card-body">
+                    <h5 class="card-title">Fundamentos de desarrollo de aplicaciones</h5>
+                    <p class="card-text">Issued Aug 2019, Expired Sep 2019 - Escuela de Ingeniería de Antioquia</p>
+                    <p>Skills: Software Design · Software Development · Front-End Development</p>
+                    <a href="https://www.linkedin.com/in/sara-dominguezr/details/certifications/1704915133469/single-media-viewer/?profileId=ACoAACkWugIBgGWWK4CX2JUd39JtvlGHResLNKk" class="btn btn-success" target="_blank">View Certification</a>
+                </div>
+            </div>
+
+            <!-- Certification Item 9 -->
+            <div class="card" style="width: 18rem;">
+                <div class="card-body">
+                    <h5 class="card-title">Introduction to network management</h5>
+                    <p class="card-text">Issued Feb 2024, Expired Mar 2024 - Lacnic campus</p>
+                    <p>Skills: Telematics · Internet of Things (IoT)</p>
+                    <a href="https://www.linkedin.com/in/sara-dominguezr/details/certifications/1710288180102/single-media-viewer/?profileId=ACoAACkWugIBgGWWK4CX2JUd39JtvlGHResLNKk" class="btn btn-success" target="_blank">View Certification</a>
+                </div>
+            </div>
         </div>
     </div>
 </section>
