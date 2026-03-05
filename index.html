@@ -3,825 +3,1280 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Resume - Sara Domínguez</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-  <!-- AOS Animation Library -->
-  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+  <title>Sara Domínguez Robledo — Software Engineer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=DM+Sans:wght@300;400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
   <style>
-/* Elimina márgenes y rellenos globalmente */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-body {
-    overflow-x: hidden; /* Evita el desplazamiento horizontal */
-    background-color: #f4f1ea; /* Beige claro */
-    color: #5a4d41; /* Gris oscuro-terroso */
-    font-family: 'Arial', sans-serif; /* Mantiene la fuente actual */
-}
-
-.skills .skill-item {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    margin-bottom: 1.5rem; /* Espacio entre cada skill */
-    width: 100%; /* Asegúrate de que las barras ocupen todo el ancho */
-}
-
-.hero {
-    background-color: #d7c9b2; /* Beige suave con toque tierra */
-    color: #3e2c1c; /* Gris oscuro-café */
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
-.about, .skills, .projects, .experience, .certifications {
-    padding: 4rem 2rem;
-}
-
-/* Fondo de la sección About y siguientes secciones */
-.about, .skills, .projects, .experience, .certifications {
-    background: url('https://www.freepik.es/vector-gratis/ilustracion-vector-patron-color-moderno_2904382.htm#fromView=keyword&page=1&position=10&uuid=3f9fee63-76bb-4592-ae45-44797c2eba93') no-repeat center center fixed;
-    background-size: cover;
-    padding: 6rem 3rem; /* Incrementa el relleno */
-    min-height: 120vh; /* Aumenta la altura mínima */
-    margin-bottom: 3rem; /* Añade espacio entre secciones */
-}
-
-
-/* Estilo para la sección About */
-.about {
-
-    text-align: center;
-    position: relative;
-}
-
-.about::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-
-    z-index: -1; /* Poner el fondo detrás del contenido */
-}
-
-.projects {
-    background-color: #e4d1b9; /* Beige suave y cálido */
-}
-
-.skills {
-    background-color: #e4d1b9; /* Beige tierra */
-}
-
-
-/* Estilos de las tarjetas */
-.card {
-    height: 450px; /* Incrementa la altura de las tarjetas */
-    margin-bottom: 2rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    background-color: #f3ebe0; /* Beige claro */
-    padding: 1.5rem;
-    border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    flex: 1 1 calc(33.33% - 1rem); /* Ajusta el tamaño de la tarjeta */
-    margin: 1rem;
-}
-
-.skills .progress-bar {
-    width: 80%; /* Ajusta este valor para hacer la barra más larga */
-    max-width: 100%; /* Asegúrate de que no exceda el contenedor */
-    height: 25px; /* Aumenta la altura de la barra */
-    background-color: #5a4d41; /* Color de la barra */
-    border-radius: 10px; /* Bordes redondeados */
-}
-
-.skills .progress {
-    width: 100%; /* Asegúrate de que las barras ocupen todo el contenedor */
-    background-color: #e4d1b9; /* Fondo de la barra */
-    border-radius: 10px; /* Bordes redondeados */
-    overflow: hidden; /* Asegura que la barra no se salga */
-}
-
-
-/* Contenedor de la imagen en la tarjeta */
-.card-img-top {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 200px; /* Establece una altura fija */
-    background: #f8f9fa; /* Fondo blanco claro */
-}
-
-/* Estilos para las imágenes de los proyectos */
-.project-img {
-    width: 100%;  /* Asegura que las imágenes ocupen todo el ancho */
-    height: 100%; /* Establece que la imagen ocupe toda la altura del contenedor */
-    object-fit: cover; /* Ajusta la imagen para cubrir todo el área sin distorsionar */
-    object-position: center; /* Asegura que la imagen se recorte desde el centro */
-}
-
-
-.btn-github {
-    background-color: #d7c9b2; /* Beige tierra */
-    color: white;
-}
-
-.btn-github:hover {
-    background-color: #b69a7d; /* Beige más oscuro */
-}
-
-.btn-github i {
-    margin-left: 0.5rem;
-}
-
-.btn-github, .btn-linkedin {
-    transition: transform 0.2s ease-in-out;
-}
-
-.btn-github:hover, .btn-linkedin:hover {
-    transform: translateY(-5px);
-}
-
-.edu-list {
-    list-style: none;
-    padding: 0;
-}
-
-.edu-list li {
-    margin-bottom: 10px;
-}
-
-.edu-img {
-    width: 100%;
-    height: auto;
-    border-radius: 5px;
-}
-
-.hero .fab {
-    animation: bounce 1.5s ease-in-out infinite;
-}
-
-@keyframes bounce {
-    0%, 100% {
-        transform: translateY(0);
-    }
-    50% {
-        transform: translateY(-10px);
-    }
-}
-
-.projects .container {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap; /* Asegura que las tarjetas se acomoden bien */
-    gap: 1rem; /* Espacio entre las tarjetas */
-}
-
-
-.projects .card {
-    margin: 1rem;
-    width: 18rem;
-    text-align: center;
-}
-
-.certification-img {
-    width: 50px;
-    height: 50px;
-    margin-right: 10px;
-}
-
-.certifications .certification-item {
-    display: flex;
-    align-items: center;
-    margin-bottom: 1rem;
-}
-
-/* Cambiar colores de enlaces y botones */
-a {
-    color: #5a4d41; /* Gris oscuro-terroso */
-}
-
-a:hover {
-    color: #3e2c1c; /* Gris más oscuro-café */
-}
-
-.navbar {
-    background-color: #d7c9b2; /* Beige tierra */
-}
-
-.navbar a {
-    color: #3e2c1c; /* Gris oscuro-café */
-}
-
-.navbar a:hover {
-    color: #3e2c1c; /* Gris más oscuro-café */
-}
-
-.carousel-item {
-    padding: 20px;
-}
-
-.d-flex {
-    display: flex;
-    justify-content: space-between;
-    gap: 20px;
-    flex-wrap: wrap;
-}
-
-.card {
-    flex: 1 1 calc(33.33% - 20px); /* Allows 3 cards per row */
-    margin-bottom: 20px;
-}
-
-.card img {
-    max-height: 200px;
-    object-fit: cover;
-}
-
-.carousel-item {
-    padding: 20px;
-}
-
-.d-flex {
-    display: flex;
-    justify-content: space-between;
-    gap: 20px;
-    flex-wrap: wrap;
-}
-
-.card {
-    flex: 1 1 calc(33.33% - 20px); /* Ensures 3 cards per row */
-    margin-bottom: 20px;
-    height: 400px; /* Set a fixed height for all cards */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Cambié el tamaño y la opacidad de la sombra */
-
-}
-
-.card img {
-    height: 200px; /* Fixed height for images */
-    object-fit: cover;
-}
-
-.carousel-item {
-    padding: 20px;
-}
-
-.d-flex {
-    display: flex;
-    justify-content: space-between;
-    gap: 20px;
-    flex-wrap: wrap;
-}
-
-.card {
-    flex: 1 1 calc(33.33% - 20px); /* Ensures 3 cards per row */
-    margin-bottom: 20px;
-    height: 400px; /* Set a fixed height for all cards */
-}
-
-.carousel-control-prev-icon, .carousel-control-next-icon {
-    background-color: black;
-}
-
-.carousel-control-prev, .carousel-control-next {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 5%;
-}
-
-.carousel-control-prev {
-    left: 0;
-}
-
-.carousel-control-next {
-    right: 0;
-}
-
-/* Style for buttons */
-.btn-success {
-    background-color: #d7c9b2; /* Custom green color */
-    border-color: #d7c9b2;
-}
-
-.btn-success:hover {
-    background-color: #d7c9b2; /* Darker green on hover */
-    border-color: #d7c9b2;
-}
-
-/* Center text inside the cards */
-.card-body {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-}
-
-/* Asegurarse de que el contenedor del título esté centrado */
-.section-title-container {
-  display: flex;
-  justify-content: center;
-  width: 100%;
-}
-
-/* Estilo para los títulos de las secciones */
-section h2 {
-  font-size: 3rem; /* Aumenta el tamaño de la fuente */
-  color: #3e2c1c; /* Color que ya has utilizado para el texto */
-  margin-bottom: 2rem; /* Añade espacio debajo del título */
-  text-align: center; /* Centra los títulos */
-  letter-spacing: 2px; /* Agrega espaciado entre letras */
-  font-family: 'Arial', sans-serif; /* Mantiene la fuente actual */
-}
-
-
-/* Si necesitas que cada sección tenga su propio título, puedes usar las clases específicas */
-.about h2, .skills h2, .projects h2, .experience h2, .certifications h2 {
-    font-size: 3rem;
-    color: #3e2c1c;
-    font-weight: bold;
-    text-align: center;
-    margin-bottom: 2rem;
-    letter-spacing: 1px;
-    font-family: 'Arial', sans-serif; /* Mantiene la fuente actual */
-}
-
-/* Certifications Section */
-.certifications {
-    padding: 4rem 2rem;
-}
-
-.certifications-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center; /* Centra las tarjetas horizontalmente */
-    gap: 20px; /* Espacio entre las tarjetas */
-}
-
-.card {
-    flex: 1 1 calc(33.33% - 20px); /* 3 tarjetas por fila con espacio entre ellas */
-    margin-bottom: 20px;
-    height: 400px; /* Set a fixed height for all cards */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Cambié el tamaño y la opacidad de la sombra */
-
-}
-
-.card img {
-    height: 200px; /* Fixed height for images */
-    object-fit: cover;
-}
-
-@media (max-width: 768px) {
-    .certifications-container {
-        flex-direction: column; /* Apila las tarjetas verticalmente en pantallas pequeñas */
-        align-items: center; /* Centra las tarjetas en pantallas pequeñas */
+    :root {
+      --cream: #f5efe6;
+      --warm-white: #faf7f2;
+      --sand: #e8dcc8;
+      --terracotta: #c0714a;
+      --rust: #9b4e2e;
+      --deep-brown: #2d1f14;
+      --mid-brown: #5a3d28;
+      --gold: #c9963a;
+      --sage: #7a9e7e;
+      --ink: #1a1209;
     }
 
-    .card {
-        width: 100%; /* Las tarjetas ocupan todo el ancho en pantallas pequeñas */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background-color: var(--warm-white);
+      color: var(--deep-brown);
+      font-family: 'DM Sans', sans-serif;
+      overflow-x: hidden;
+      cursor: none;
     }
-}
 
-.card-body {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between; /* Espacio entre los elementos */
-    align-items: center;
-    text-align: center;
-}
+    /* ── CUSTOM CURSOR ── */
+    .cursor {
+      width: 12px; height: 12px;
+      background: var(--terracotta);
+      border-radius: 50%;
+      position: fixed; top: 0; left: 0;
+      pointer-events: none; z-index: 9999;
+      transition: transform 0.15s ease;
+      mix-blend-mode: multiply;
+    }
+    .cursor-ring {
+      width: 36px; height: 36px;
+      border: 1.5px solid var(--terracotta);
+      border-radius: 50%;
+      position: fixed; top: 0; left: 0;
+      pointer-events: none; z-index: 9998;
+      transition: transform 0.35s ease, opacity 0.2s;
+      opacity: 0.5;
+    }
 
-</style>
+    /* ── NAV ── */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0;
+      z-index: 100;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 1.4rem 4rem;
+      background: rgba(250, 247, 242, 0.88);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(192,113,74,0.15);
+      transition: all 0.3s;
+    }
+    .nav-logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.25rem;
+      font-weight: 900;
+      color: var(--terracotta);
+      letter-spacing: -0.5px;
+      text-decoration: none;
+    }
+    .nav-links { display: flex; gap: 2.5rem; list-style: none; }
+    .nav-links a {
+      font-size: 0.82rem;
+      font-weight: 500;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      text-decoration: none;
+      color: var(--mid-brown);
+      position: relative;
+      transition: color 0.3s;
+    }
+    .nav-links a::after {
+      content: '';
+      position: absolute; bottom: -4px; left: 0;
+      width: 0; height: 1.5px;
+      background: var(--terracotta);
+      transition: width 0.3s;
+    }
+    .nav-links a:hover { color: var(--terracotta); }
+    .nav-links a:hover::after { width: 100%; }
 
+    /* ── HERO ── */
+    .hero {
+      min-height: 100vh;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero-left {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 8rem 4rem 4rem 5rem;
+      position: relative;
+      z-index: 2;
+    }
+    .hero-eyebrow {
+      font-family: 'Space Mono', monospace;
+      font-size: 0.75rem;
+      letter-spacing: 3px;
+      color: var(--terracotta);
+      text-transform: uppercase;
+      margin-bottom: 1.5rem;
+      opacity: 0;
+      animation: slideUp 0.8s 0.2s forwards;
+    }
+    .hero-name {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(3.5rem, 6vw, 6rem);
+      font-weight: 900;
+      line-height: 1.0;
+      color: var(--deep-brown);
+      margin-bottom: 0.5rem;
+      opacity: 0;
+      animation: slideUp 0.8s 0.35s forwards;
+    }
+    .hero-name em {
+      font-style: italic;
+      color: var(--terracotta);
+    }
+    .hero-title {
+      font-family: 'Space Mono', monospace;
+      font-size: 1rem;
+      color: var(--mid-brown);
+      margin-bottom: 2rem;
+      opacity: 0;
+      animation: slideUp 0.8s 0.5s forwards;
+    }
+    .hero-desc {
+      font-size: 1.05rem;
+      line-height: 1.75;
+      color: var(--mid-brown);
+      max-width: 420px;
+      margin-bottom: 3rem;
+      font-weight: 300;
+      opacity: 0;
+      animation: slideUp 0.8s 0.65s forwards;
+    }
+    .hero-cta {
+      display: flex; gap: 1rem; flex-wrap: wrap;
+      opacity: 0;
+      animation: slideUp 0.8s 0.8s forwards;
+    }
+    .btn-primary {
+      background: var(--terracotta);
+      color: white;
+      padding: 0.9rem 2rem;
+      border: none;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.9rem;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+      cursor: none;
+      text-decoration: none;
+      display: inline-block;
+      transition: background 0.3s, transform 0.2s;
+    }
+    .btn-primary:hover { background: var(--rust); transform: translateY(-2px); }
+    .btn-outline {
+      background: transparent;
+      color: var(--mid-brown);
+      padding: 0.9rem 2rem;
+      border: 1.5px solid var(--sand);
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.9rem;
+      font-weight: 500;
+      cursor: none;
+      text-decoration: none;
+      display: inline-block;
+      transition: border-color 0.3s, color 0.3s, transform 0.2s;
+    }
+    .btn-outline:hover { border-color: var(--terracotta); color: var(--terracotta); transform: translateY(-2px); }
 
+    .hero-right {
+      position: relative;
+      background: var(--sand);
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .hero-bg-text {
+      position: absolute;
+      font-family: 'Playfair Display', serif;
+      font-size: 22vw;
+      font-weight: 900;
+      color: rgba(192,113,74,0.07);
+      line-height: 1;
+      user-select: none;
+      white-space: nowrap;
+    }
+    .hero-photo-frame {
+      width: 340px; height: 420px;
+      position: relative;
+      z-index: 2;
+    }
+    .hero-photo-frame::before {
+      content: '';
+      position: absolute;
+      top: 16px; left: 16px; right: -16px; bottom: -16px;
+      border: 2px solid var(--terracotta);
+      z-index: -1;
+    }
+    .hero-photo-frame img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+    .hero-photo-placeholder {
+      width: 100%; height: 100%;
+      background: linear-gradient(135deg, var(--terracotta) 0%, var(--rust) 100%);
+      display: flex; align-items: center; justify-content: center;
+      font-family: 'Playfair Display', serif;
+      font-size: 5rem;
+      color: rgba(255,255,255,0.3);
+    }
+
+    .hero-scroll {
+      position: absolute;
+      bottom: 2.5rem;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex; flex-direction: column; align-items: center; gap: 0.5rem;
+      font-family: 'Space Mono', monospace;
+      font-size: 0.65rem;
+      letter-spacing: 2px;
+      color: var(--terracotta);
+      text-transform: uppercase;
+      opacity: 0;
+      animation: fadeIn 1s 1.2s forwards;
+      z-index: 10;
+    }
+    .hero-scroll-line {
+      width: 1px; height: 50px;
+      background: var(--terracotta);
+      animation: scrollLine 1.5s 1.5s ease-in-out infinite;
+    }
+
+    /* ── STATS BAR ── */
+    .stats-bar {
+      background: var(--deep-brown);
+      display: flex;
+      justify-content: center;
+      gap: 0;
+    }
+    .stat-item {
+      padding: 2.5rem 4rem;
+      text-align: center;
+      border-right: 1px solid rgba(255,255,255,0.1);
+      flex: 1;
+      max-width: 200px;
+    }
+    .stat-item:last-child { border-right: none; }
+    .stat-number {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.5rem;
+      font-weight: 900;
+      color: var(--terracotta);
+      display: block;
+    }
+    .stat-label {
+      font-size: 0.72rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.5);
+      font-family: 'Space Mono', monospace;
+      margin-top: 0.3rem;
+      display: block;
+    }
+
+    /* ── SECTIONS ── */
+    section { padding: 7rem 5rem; }
+    .section-label {
+      font-family: 'Space Mono', monospace;
+      font-size: 0.72rem;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--terracotta);
+      margin-bottom: 1rem;
+    }
+    .section-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2rem, 4vw, 3.5rem);
+      font-weight: 900;
+      color: var(--deep-brown);
+      line-height: 1.1;
+      margin-bottom: 3rem;
+    }
+    .section-title em { font-style: italic; color: var(--terracotta); }
+
+    /* ── ABOUT ── */
+    .about { background: var(--warm-white); }
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 6rem;
+      align-items: start;
+    }
+    .about-text p {
+      font-size: 1.05rem;
+      line-height: 1.85;
+      color: var(--mid-brown);
+      margin-bottom: 1.5rem;
+      font-weight: 300;
+    }
+    .about-details {
+      display: flex;
+      flex-direction: column;
+      gap: 2.5rem;
+    }
+    .detail-block {
+      border-left: 2px solid var(--terracotta);
+      padding-left: 1.5rem;
+    }
+    .detail-block h4 {
+      font-family: 'Space Mono', monospace;
+      font-size: 0.7rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--terracotta);
+      margin-bottom: 0.8rem;
+    }
+    .detail-block p, .detail-block li {
+      font-size: 0.95rem;
+      color: var(--mid-brown);
+      line-height: 1.7;
+    }
+    .detail-block ul { list-style: none; }
+    .detail-block li::before { content: '→  '; color: var(--terracotta); font-size: 0.8rem; }
+    .badge-row { display: flex; gap: 0.5rem; flex-wrap: wrap; margin-top: 0.5rem; }
+    .badge {
+      background: var(--sand);
+      color: var(--mid-brown);
+      padding: 0.3rem 0.9rem;
+      font-size: 0.78rem;
+      font-family: 'Space Mono', monospace;
+      border-radius: 0;
+    }
+    .badge.accent {
+      background: var(--terracotta);
+      color: white;
+    }
+
+    /* ── EXPERIENCE ── */
+    .experience { background: var(--cream); }
+    .exp-timeline { position: relative; }
+    .exp-timeline::before {
+      content: '';
+      position: absolute;
+      left: 0; top: 0; bottom: 0;
+      width: 1px;
+      background: linear-gradient(to bottom, var(--terracotta), transparent);
+    }
+    .exp-item {
+      display: grid;
+      grid-template-columns: 220px 1fr;
+      gap: 3rem;
+      padding: 2.5rem 0 2.5rem 0;
+      border-bottom: 1px solid var(--sand);
+      padding-left: 2rem;
+      position: relative;
+      opacity: 0;
+      transform: translateX(-20px);
+      transition: opacity 0.6s, transform 0.6s;
+    }
+    .exp-item.visible { opacity: 1; transform: translateX(0); }
+    .exp-item::before {
+      content: '';
+      position: absolute;
+      left: -5px; top: 2.5rem + 0.5rem;
+      width: 10px; height: 10px;
+      background: var(--terracotta);
+      border-radius: 50%;
+    }
+    .exp-meta {}
+    .exp-period {
+      font-family: 'Space Mono', monospace;
+      font-size: 0.72rem;
+      color: var(--terracotta);
+      letter-spacing: 1px;
+      margin-bottom: 0.5rem;
+    }
+    .exp-company {
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--deep-brown);
+    }
+    .exp-location {
+      font-size: 0.8rem;
+      color: rgba(90,61,40,0.5);
+      margin-top: 0.3rem;
+    }
+    .exp-body h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: var(--deep-brown);
+      margin-bottom: 1rem;
+    }
+    .exp-body ul { list-style: none; display: flex; flex-direction: column; gap: 0.5rem; }
+    .exp-body li {
+      font-size: 0.95rem;
+      color: var(--mid-brown);
+      line-height: 1.6;
+      padding-left: 1.2rem;
+      position: relative;
+    }
+    .exp-body li::before {
+      content: '▸';
+      position: absolute; left: 0;
+      color: var(--terracotta);
+      font-size: 0.7rem;
+      top: 0.2rem;
+    }
+    .exp-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-top: 1rem; }
+    .exp-tag {
+      background: white;
+      border: 1px solid var(--sand);
+      color: var(--mid-brown);
+      padding: 0.2rem 0.7rem;
+      font-size: 0.72rem;
+      font-family: 'Space Mono', monospace;
+    }
+
+    /* ── SKILLS ── */
+    .skills-section { background: var(--deep-brown); }
+    .skills-section .section-title { color: white; }
+    .skills-section .section-label { color: var(--gold); }
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+    }
+    .skill-card {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+      padding: 2rem;
+      position: relative;
+      overflow: hidden;
+      transition: background 0.3s, border-color 0.3s, transform 0.3s;
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    .skill-card.visible { opacity: 1; transform: translateY(0); }
+    .skill-card:hover {
+      background: rgba(192,113,74,0.1);
+      border-color: rgba(192,113,74,0.4);
+      transform: translateY(-4px);
+    }
+    .skill-icon {
+      font-size: 1.8rem;
+      margin-bottom: 1rem;
+      display: block;
+    }
+    .skill-name {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 1rem;
+      font-weight: 600;
+      color: white;
+      margin-bottom: 0.4rem;
+    }
+    .skill-desc {
+      font-size: 0.82rem;
+      color: rgba(255,255,255,0.45);
+      line-height: 1.6;
+      margin-bottom: 1.2rem;
+    }
+    .skill-bar-bg {
+      width: 100%; height: 2px;
+      background: rgba(255,255,255,0.1);
+      border-radius: 1px;
+      overflow: hidden;
+    }
+    .skill-bar-fill {
+      height: 100%;
+      background: linear-gradient(90deg, var(--terracotta), var(--gold));
+      border-radius: 1px;
+      width: 0;
+      transition: width 1.2s ease;
+    }
+    .skill-level {
+      font-family: 'Space Mono', monospace;
+      font-size: 0.65rem;
+      color: var(--terracotta);
+      margin-top: 0.5rem;
+      letter-spacing: 1px;
+    }
+
+    /* ── PROJECTS ── */
+    .projects { background: var(--warm-white); }
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+    }
+    .project-card {
+      background: var(--cream);
+      border: 1px solid var(--sand);
+      overflow: hidden;
+      transition: transform 0.3s, box-shadow 0.3s;
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    .project-card.visible { opacity: 1; transform: translateY(0); }
+    .project-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 20px 50px rgba(45,31,20,0.12);
+    }
+    .project-img-area {
+      height: 180px;
+      background: linear-gradient(135deg, var(--sand) 0%, var(--cream) 100%);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 3rem;
+      position: relative;
+      overflow: hidden;
+    }
+    .project-img-area::after {
+      content: '';
+      position: absolute; inset: 0;
+      background: linear-gradient(to top, var(--cream) 0%, transparent 60%);
+    }
+    .project-body { padding: 1.5rem; }
+    .project-body h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--deep-brown);
+      margin-bottom: 0.6rem;
+    }
+    .project-body p {
+      font-size: 0.88rem;
+      color: var(--mid-brown);
+      line-height: 1.65;
+      margin-bottom: 1.2rem;
+    }
+    .project-link {
+      font-family: 'Space Mono', monospace;
+      font-size: 0.7rem;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: var(--terracotta);
+      text-decoration: none;
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      transition: gap 0.2s;
+    }
+    .project-link:hover { gap: 0.9rem; }
+
+    /* ── CERTIFICATIONS ── */
+    .certifications { background: var(--cream); }
+    .certs-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1rem;
+    }
+    .cert-card {
+      background: white;
+      border: 1px solid var(--sand);
+      padding: 1.5rem;
+      transition: transform 0.2s, border-color 0.2s;
+      opacity: 0;
+      transform: scale(0.95);
+    }
+    .cert-card.visible { opacity: 1; transform: scale(1); }
+    .cert-card:hover { transform: translateY(-3px); border-color: var(--terracotta); }
+    .cert-issuer {
+      font-family: 'Space Mono', monospace;
+      font-size: 0.62rem;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: var(--terracotta);
+      margin-bottom: 0.6rem;
+    }
+    .cert-name {
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--deep-brown);
+      line-height: 1.4;
+      margin-bottom: 0.4rem;
+    }
+    .cert-date {
+      font-size: 0.75rem;
+      color: rgba(90,61,40,0.5);
+    }
+    .cert-link {
+      display: block;
+      margin-top: 1rem;
+      font-family: 'Space Mono', monospace;
+      font-size: 0.65rem;
+      letter-spacing: 1px;
+      color: var(--terracotta);
+      text-decoration: none;
+      text-transform: uppercase;
+    }
+    .cert-link:hover { text-decoration: underline; }
+
+    /* ── RESEARCH ── */
+    .research { background: var(--deep-brown); }
+    .research .section-title { color: white; }
+    .research .section-label { color: var(--gold); }
+    .research-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+    }
+    .research-card {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.1);
+      padding: 2.5rem;
+    }
+    .research-card h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.3rem;
+      color: white;
+      margin-bottom: 0.8rem;
+    }
+    .research-card p {
+      font-size: 0.9rem;
+      color: rgba(255,255,255,0.5);
+      line-height: 1.7;
+    }
+    .research-card .year {
+      font-family: 'Space Mono', monospace;
+      font-size: 0.7rem;
+      color: var(--gold);
+      letter-spacing: 2px;
+      margin-bottom: 1rem;
+    }
+
+    /* ── ACHIEVEMENTS ── */
+    .achievements {
+      background: var(--terracotta);
+      padding: 5rem;
+      text-align: center;
+    }
+    .achievements h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2rem, 5vw, 4rem);
+      color: white;
+      margin-bottom: 3rem;
+    }
+    .awards-row {
+      display: flex;
+      justify-content: center;
+      gap: 4rem;
+      flex-wrap: wrap;
+    }
+    .award-item { text-align: center; }
+    .award-icon { font-size: 3rem; display: block; margin-bottom: 0.8rem; }
+    .award-name {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.3rem;
+      color: white;
+      display: block;
+    }
+    .award-year {
+      font-family: 'Space Mono', monospace;
+      font-size: 0.72rem;
+      color: rgba(255,255,255,0.6);
+      letter-spacing: 2px;
+    }
+
+    /* ── CONTACT / FOOTER ── */
+    footer {
+      background: var(--ink);
+      padding: 5rem;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 4rem;
+      align-items: start;
+    }
+    .footer-left h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.5rem;
+      color: white;
+      margin-bottom: 1rem;
+    }
+    .footer-left p {
+      font-size: 1rem;
+      color: rgba(255,255,255,0.4);
+      line-height: 1.7;
+      max-width: 400px;
+    }
+    .footer-email {
+      display: block;
+      margin-top: 1.5rem;
+      font-family: 'Space Mono', monospace;
+      font-size: 0.9rem;
+      color: var(--terracotta);
+      text-decoration: none;
+    }
+    .footer-email:hover { text-decoration: underline; }
+    .footer-phone {
+      display: block;
+      margin-top: 0.5rem;
+      font-family: 'Space Mono', monospace;
+      font-size: 0.85rem;
+      color: rgba(255,255,255,0.3);
+    }
+    .footer-right { text-align: right; }
+    .footer-right p {
+      font-family: 'Space Mono', monospace;
+      font-size: 0.7rem;
+      color: rgba(255,255,255,0.2);
+      letter-spacing: 1px;
+      margin-top: 1rem;
+    }
+    .social-links { display: flex; flex-direction: column; gap: 1rem; align-items: flex-end; }
+    .social-link {
+      font-family: 'Space Mono', monospace;
+      font-size: 0.75rem;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.5);
+      text-decoration: none;
+      display: flex; align-items: center; gap: 0.7rem;
+      transition: color 0.3s;
+    }
+    .social-link:hover { color: var(--terracotta); }
+    .social-link .arrow { color: var(--terracotta); }
+
+    /* ── ANIMATIONS ── */
+    @keyframes slideUp {
+      from { opacity: 0; transform: translateY(25px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+    @keyframes scrollLine {
+      0%, 100% { transform: scaleY(1); opacity: 1; }
+      50% { transform: scaleY(0.3); opacity: 0.3; }
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 900px) {
+      nav { padding: 1.2rem 2rem; }
+      .nav-links { display: none; }
+      .hero { grid-template-columns: 1fr; }
+      .hero-right { display: none; }
+      .hero-left { padding: 8rem 2rem 4rem; }
+      section { padding: 5rem 2rem; }
+      .about-grid { grid-template-columns: 1fr; gap: 3rem; }
+      .skills-grid { grid-template-columns: 1fr 1fr; }
+      .projects-grid { grid-template-columns: 1fr; }
+      .certs-grid { grid-template-columns: 1fr 1fr; }
+      .research-grid { grid-template-columns: 1fr; }
+      footer { grid-template-columns: 1fr; }
+      .footer-right { text-align: left; }
+      .social-links { align-items: flex-start; }
+      .stats-bar { flex-wrap: wrap; }
+      .stat-item { max-width: none; flex: 1 1 120px; }
+      .exp-item { grid-template-columns: 1fr; gap: 0.5rem; }
+    }
+  </style>
 </head>
 <body>
-  <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <div class="container-fluid">
-      <a class="navbar-brand" href="#">Sara Dominguez</a>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav">
-          <li class="nav-item"><a class="nav-link" href="#about">About Me</a></li>
-          <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
-          <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
-          <li class="nav-item"><a class="nav-link" href="#experience">Experience</a></li>
-          <li class="nav-item"><a class="nav-link" href="#certifications">Certifications</a></li>
-        </ul>
-      </div>
-    </div>
+
+  <!-- Custom cursor -->
+  <div class="cursor" id="cursor"></div>
+  <div class="cursor-ring" id="cursorRing"></div>
+
+  <!-- NAV -->
+  <nav>
+    <a class="nav-logo" href="#">SD</a>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#certifications">Certifications</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
   </nav>
 
-  <!-- Hero Section -->
-  <div class="hero" data-aos="fade-up">
-    <p class="h5">Hi, my name is</p>
-    <h1>Sara Domínguez</h1>
-    <h2>Software Developer</h2>
-    <div class="mt-3">
-      <!-- GitHub and LinkedIn icons that will bounce -->
-      <a href="https://www.linkedin.com/in/sara-dominguezr" target="_blank" class="text-white me-3 btn-linkedin" data-aos="zoom-in" data-aos-delay="100"><i class="fab fa-linkedin fa-2x"></i></a>
-      <a href="https://github.com/sdominguer" target="_blank" class="text-white btn-github" data-aos="zoom-in" data-aos-delay="200"><i class="fab fa-github fa-2x"></i></a>
+  <!-- HERO -->
+  <div class="hero">
+    <div class="hero-left">
+      <span class="hero-eyebrow">Software Engineer · Medellín, Colombia</span>
+      <h1 class="hero-name">Sara<br><em>Domínguez</em><br>Robledo</h1>
+      <p class="hero-title">// Software & Mathematical Engineering</p>
+      <p class="hero-desc">Building scalable systems and data-driven solutions. Dual degree student at EAFIT University with 3+ years of professional experience in software development, ML, and QA automation.</p>
+      <div class="hero-cta">
+        <a href="#experience" class="btn-primary">See My Work</a>
+        <a href="https://www.linkedin.com/in/sara-dominguezr" target="_blank" class="btn-outline">LinkedIn ↗</a>
+        <a href="https://github.com/sdominguer" target="_blank" class="btn-outline">GitHub ↗</a>
+      </div>
+    </div>
+    <div class="hero-right">
+      <span class="hero-bg-text">SD</span>
+      <div class="hero-photo-frame">
+        <div class="hero-photo-placeholder">SD</div>
+      </div>
+    </div>
+    <div class="hero-scroll">
+      <span>Scroll</span>
+      <div class="hero-scroll-line"></div>
     </div>
   </div>
 
-  <!-- About Section -->
-<!-- About Section -->
-<section id="about" class="about" data-aos="fade-left" data-aos-duration="1500">
-    <div class="container">
-        <h2 class="mb-5">About Me</h2>
-
-        <p>Passionate and versatile Software Engineer with a deep love for learning and exploring new concepts. Currently pursuing dual degrees in Software Engineering and Mathematical Engineering at EAFIT University.</p>
-
-        <p>My enthusiasm for technology extends beyond traditional boundaries; I'm particularly drawn to software development, data analytics, modeling, simulation, and database management. Constantly seeking to expand my knowledge base, I thrive in dynamic learning environments and actively seek out opportunities to grow.</p>
-
-        <p>I am genuinely excited about the prospect of collaborating with fellow enthusiasts and contributing to innovative software development and data analytics endeavors.</p>
-
-        <h3 class="mt-5">Education</h3>
-        <ul class="edu-list">
-            <li><strong>Systems Engineering</strong> - EAFIT (Started in 2021)</li>
-            <li><strong>Mathematical Engineering</strong> - EAFIT (Started in 2023)</li>
-        </ul>
+  <!-- STATS -->
+  <div class="stats-bar">
+    <div class="stat-item">
+      <span class="stat-number">3+</span>
+      <span class="stat-label">Years Exp.</span>
     </div>
-</section>
-
-
-  <section id="skills" class="skills" data-aos="fade-left" data-aos-duration="1500">
-    <div class="container">
-        <h2 class="text-center mb-5">Skills</h2>
-        <div class="row">
-            <!-- Python -->
-            <div class="col-md-4">
-                <div class="card text-center">
-                    <div class="card-body">
-                        <i class="fab fa-python fa-3x"></i>
-                        <h5 class="card-title mt-3">Python</h5>
-                        <p class="card-text">Focused on web development (Django, Flask), data analytics, processing, modeling, and telematics.</p>
-                        <div class="progress" style="height: 25px; margin-top: 10px;">
-                            <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" style="width: 90%; background-color: #5a4d41;" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100">90%</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- R -->
-            <div class="col-md-4">
-                <div class="card text-center">
-                    <div class="card-body">
-                        <i class="fas fa-chart-line fa-3x"></i>
-                        <h5 class="card-title mt-3">R</h5>
-                        <p class="card-text">With main experience on data analytics, prediction, and model creation.</p>
-                        <div class="progress" style="height: 25px; margin-top: 10px;">
-                            <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" style="width: 75%; background-color: #5a4d41;" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">75%</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- MySQL -->
-            <div class="col-md-4">
-                <div class="card text-center">
-                    <div class="card-body">
-                        <i class="fas fa-database fa-3x"></i>
-                        <h5 class="card-title mt-3">MySQL</h5>
-                        <p class="card-text">With the main purpose of creating databases, connecting them to web pages, and data processing.</p>
-                        <div class="progress" style="height: 25px; margin-top: 10px;">
-                            <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" style="width: 65%; background-color: #5a4d41;" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100">65%</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- Java -->
-            <div class="col-md-4">
-                <div class="card text-center">
-                    <div class="card-body">
-                        <i class="fas fa-cogs fa-3x"></i>
-                        <h5 class="card-title mt-3">Java</h5>
-                        <p class="card-text">Experience on backend development and web applications.</p>
-                        <div class="progress" style="height: 25px; margin-top: 10px;">
-                            <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" style="width: 50%; background-color: #5a4d41;" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">50%</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- HTML -->
-            <div class="col-md-4">
-                <div class="card text-center">
-                    <div class="card-body">
-                        <i class="fab fa-html5 fa-3x"></i>
-                        <h5 class="card-title mt-3">HTML</h5>
-                        <p class="card-text">Experience on frontend development.</p>
-                        <div class="progress" style="height: 25px; margin-top: 10px;">
-                            <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" style="width: 90%; background-color: #5a4d41;" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100">90%</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- JavaScript -->
-            <div class="col-md-4">
-                <div class="card text-center">
-                    <div class="card-body">
-                        <i class="fab fa-js fa-3x"></i>
-                        <h5 class="card-title mt-3">JavaScript</h5>
-                        <p class="card-text">Experience on frontend development.</p>
-                        <div class="progress" style="height: 25px; margin-top: 10px;">
-                            <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" style="width: 65%; background-color: #5a4d41;" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100">65%</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- AWS -->
-            <div class="col-md-4">
-                <div class="card text-center">
-                    <div class="card-body">
-                        <i class="fab fa-aws fa-3x"></i>
-                        <h5 class="card-title mt-3">AWS</h5>
-                        <p class="card-text">Worked on peer-to-peer communication, networking protocols (TCP/IP), deploying web pages, and implementing leader election algorithms.</p>
-                        <div class="progress" style="height: 25px; margin-top: 10px;">
-                            <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" style="width: 60%; background-color: #5a4d41;" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100">60%</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- MATLAB -->
-            <div class="col-md-4">
-                <div class="card text-center">
-                    <div class="card-body">
-                        <i class="fas fa-calculator fa-3x"></i>
-                        <h5 class="card-title mt-3">MATLAB</h5>
-                        <p class="card-text">Mainly used for statistics, data analysis, differential equations, etc.</p>
-                        <div class="progress" style="height: 25px; margin-top: 10px;">
-                            <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" style="width: 50%; background-color: #5a4d41;" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">50%</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- C++ -->
-            <div class="col-md-4">
-                <div class="card text-center">
-                    <div class="card-body">
-                        <i class="fab fa-c fa-3x"></i>
-                        <h5 class="card-title mt-3">C++</h5>
-                        <p class="card-text">Worked on real-time interactions between web interfaces and hardware, system-level programming, and low-level applications.</p>
-                        <div class="progress" style="height: 25px; margin-top: 10px;">
-                            <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" style="width: 70%; background-color: #5a4d41;" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100">70%</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+    <div class="stat-item">
+      <span class="stat-number">5</span>
+      <span class="stat-label">Companies</span>
     </div>
-</section>
-
-    
-
-<!-- Experience Section -->
-<section id="experience" class="experience" data-aos="fade-left" data-aos-duration="1500" style="background-color: #e4d1b9;">
-    <div class="container">
-        <h2 class="text-center mb-5">Experience</h2>
-
-        <!-- Bootstrap Carousel -->
-        <div id="experienceCarousel" class="carousel slide" data-bs-ride="carousel">
-            <div class="carousel-inner">
-                <!-- First Slide -->
-                <div class="carousel-item active">
-                    <div class="d-flex justify-content-center">
-                        <div class="card" style="width: 18rem;">
-                            <div class="card-body">
-                                <h5 class="card-title">Software Developer</h5>
-                                <h6 class="card-subtitle mb-2 text-muted">Universidad EAFIT</h6>
-                                <p class="card-text">Developed software for various research projects at Universidad EAFIT, including:</p>
-                                <ul>
-                                    <li>A web platform for mathematical epidemiology.</li>
-                                    <li>Machine learning models for air quality analysis.</li>
-                                    <li>A 3D global map for visualizing air quality data.</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Second Slide -->
-                <div class="carousel-item">
-                    <div class="d-flex justify-content-center">
-                        <div class="card" style="width: 18rem;">
-                            <div class="card-body">
-                                <h5 class="card-title">Software Developer</h5>
-                                <h6 class="card-subtitle mb-2 text-muted">Contract with Plynn</h6>
-                                <p class="card-text">Jun 2023 - Jan 2024 · 8 mos</p>
-                                <p class="card-text">Automated the learning processes for Plynn, a company focused on educational methodologies, by developing and integrating solutions tailored to their business needs.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Third Slide -->
-                <div class="carousel-item">
-                    <div class="d-flex justify-content-center">
-                        <div class="card" style="width: 18rem;">
-                            <div class="card-body">
-                                <h5 class="card-title">Junior Software Developer</h5>
-                                <h6 class="card-subtitle mb-2 text-muted">Smart Talent · Full-time</h6>
-                                <p class="card-text">Jan 2023 - Jan 2024 · 1 yr 1 mo</p>
-                                <p class="card-text">Colombia · Remote</p>
-                                <p class="card-text">
-                                    At Smart Talent, I collaborated with senior developers to design and develop Python applications, ensuring they met technical requirements and exceeded client expectations. Additionally, I worked with cross-functional teams to deliver superior user experiences and managed the maintenance of company websites, meeting deadlines efficiently.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Carousel Controls -->
-            <button class="carousel-control-prev" type="button" data-bs-target="#experienceCarousel" data-bs-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Previous</span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#experienceCarousel" data-bs-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Next</span>
-            </button>
-        </div>
+    <div class="stat-item">
+      <span class="stat-number">12+</span>
+      <span class="stat-label">Certifications</span>
     </div>
-</section>
+    <div class="stat-item">
+      <span class="stat-number">2</span>
+      <span class="stat-label">Degrees</span>
+    </div>
+    <div class="stat-item">
+      <span class="stat-number">2×</span>
+      <span class="stat-label">Award Winner</span>
+    </div>
+  </div>
 
-
-<!-- Projects Section -->
-<section id="projects" class="projects" data-aos="fade-left" data-aos-duration="1500">
-    <div class="container">
-      <!-- Contenedor para centrar el título -->
-      <div class="section-title-container">
-        <h2 class="text-center mb-5">Projects</h2>
+  <!-- ABOUT -->
+  <section id="about" class="about">
+    <div class="section-label">01 — Profile</div>
+    <div class="about-grid">
+      <div class="about-text">
+        <h2 class="section-title">Passionate about building<br><em>meaningful software.</em></h2>
+        <p>Software Engineer with a dual academic background in Software Engineering and Mathematical Engineering from Universidad EAFIT. Over three years of experience in software development, data analytics, machine learning, and test automation.</p>
+        <p>Strong analytical skills, adaptability, and experience working with cross-functional teams to deliver scalable and efficient technological solutions. Currently pursuing a Master's in Data Science.</p>
+        <p>I'm particularly drawn to the intersection of mathematics and software — where models meet systems, and theory transforms into impact.</p>
       </div>
-      <div class="row justify-content-center">
-        <div class="col-md-4">
-          <div class="card">
-            <div class="card-img-top d-flex justify-content-center align-items-center" style="height: 200px; background: #f8f9fa;">
-              <img src="artenativo.jpg" alt="Artenativo" class="project-img">
-            </div>
-            <div class="card-body">
-              <h5 class="card-title">Artenativo</h5>
-              <p class="card-text">Web application in Flask for selling and auctioning Colombian handicrafts.</p>
-              <a href="https://github.com/sdominguer/ArteNativo2" target="_blank" class="btn btn-github">View Repository <i class="fab fa-github"></i></a>
-            </div>
+      <div class="about-details">
+        <div class="detail-block">
+          <h4>Education</h4>
+          <ul>
+            <li>Software Engineering – EAFIT (2021–Present) · Emphasis in Data Science</li>
+            <li>Mathematical Engineering – EAFIT (2023–Present)</li>
+            <li>Master in Data Science – EAFIT (In Progress)</li>
+          </ul>
+        </div>
+        <div class="detail-block">
+          <h4>Languages</h4>
+          <div class="badge-row">
+            <span class="badge accent">Spanish — Native</span>
+            <span class="badge">English — B2 (TOEIC 2023)</span>
           </div>
         </div>
-        <div class="col-md-4">
-          <div class="card">
-            <div class="card-img-top d-flex justify-content-center align-items-center" style="height: 200px; background: #f8f9fa;">
-              <img src="julia.png" alt="Julia Diagrams" class="project-img">
-            </div>
-            <div class="card-body">
-              <h5 class="card-title">Julia Diagrams</h5>
-              <p class="card-text">Class diagram generator for Julia code.</p>
-              <a href="https://github.com/sdominguer/Diagrama_Julia" target="_blank" class="btn btn-github">View Repository <i class="fab fa-github"></i></a>
-            </div>
+        <div class="detail-block">
+          <h4>Interests</h4>
+          <div class="badge-row">
+            <span class="badge">Machine Learning</span>
+            <span class="badge">Data Science</span>
+            <span class="badge">Test Automation</span>
+            <span class="badge">Mathematical Modeling</span>
+            <span class="badge">Air Quality Research</span>
           </div>
         </div>
-        <div class="col-md-4">
-          <div class="card">
-            <div class="card-img-top d-flex justify-content-center align-items-center" style="height: 200px; background: #f8f9fa;">
-              <img src="airedellin.png" alt="Airedellin" class="project-img">
-            </div>
-            <div class="card-body">
-              <h5 class="card-title">Airedellin</h5>
-              <p class="card-text">Air quality prediction models.</p>
-              <a href="https://github.com/sdominguer/Airedellin-front" target="_blank" class="btn btn-github">View Repository <i class="fab fa-github"></i></a>
-            </div>
-          </div>
+        <div class="detail-block">
+          <h4>Location</h4>
+          <p>Medellín, Colombia · Open to remote</p>
         </div>
       </div>
     </div>
   </section>
-  
 
+  <!-- EXPERIENCE -->
+  <section id="experience" class="experience">
+    <div class="section-label">02 — Experience</div>
+    <h2 class="section-title">Where I've<br><em>made an impact.</em></h2>
+    <div class="exp-timeline">
 
-<!-- Certifications Section -->
-<!-- Certifications Section -->
-<section id="certifications" class="certifications" data-aos="fade-left" data-aos-duration="1500">
-    <div class="container">
-        <h2 class="text-center mb-5">Certifications</h2>
-
-        <!-- Certification Container -->
-        <div class="certifications-container">
-            <!-- Certification Item 1 -->
-            <div class="card" style="width: 18rem;">
-                <div class="card-body">
-                    <h5 class="card-title">Curso Básico de Django</h5>
-                    <p class="card-text">Issued Nov 2024 - Netzun</p>
-                    <p>Skills: Django · Databases</p>
-                    <a href="https://www.linkedin.com/in/sara-dominguezr/details/certifications/1732074373953/single-media-viewer/?profileId=ACoAACkWugIBgGWWK4CX2JUd39JtvlGHResLNKk" class="btn btn-success" target="_blank">View Certification</a>
-                </div>
-            </div>
-
-            <!-- Certification Item 2 -->
-            <div class="card" style="width: 18rem;">
-                <div class="card-body">
-                    <h5 class="card-title">Desarrollo en Python Avanzado</h5>
-                    <p class="card-text">Issued Nov 2024 - Netzun</p>
-                    <p>Skills: Python · Object-Oriented Programming (OOP) · JSON</p>
-                    <a href="https://www.linkedin.com/in/sara-dominguezr/details/certifications/1732068555519/single-media-viewer/?profileId=ACoAACkWugIBgGWWK4CX2JUd39JtvlGHResLNKk" class="btn btn-success" target="_blank">View Certification</a>
-                </div>
-            </div>
-
-            <!-- Certification Item 3 -->
-            <div class="card" style="width: 18rem;">
-                <div class="card-body">
-                    <h5 class="card-title">Fundamentos de Python</h5>
-                    <p class="card-text">Issued Jun 2024 - Netzun</p>
-                    <p>Skills: Python (Programming Language)</p>
-                    <a href="https://www.linkedin.com/in/sara-dominguezr/details/certifications/1719186466864/single-media-viewer/?profileId=ACoAACkWugIBgGWWK4CX2JUd39JtvlGHResLNKk" class="btn btn-success" target="_blank">View Certification</a>
-                </div>
-            </div>
-
-            <!-- Certification Item 4 -->
-            <div class="card" style="width: 18rem;">
-                <div class="card-body">
-                    <h5 class="card-title">Git y GitHub profesional</h5>
-                    <p class="card-text">Issued Jun 2024 - Netzun</p>
-                    <p>Skills: Git · GitHub</p>
-                    <a href="https://www.linkedin.com/in/sara-dominguezr/details/certifications/1719176483753/single-media-viewer/?profileId=ACoAACkWugIBgGWWK4CX2JUd39JtvlGHResLNKk" class="btn btn-success" target="_blank">View Certification</a>
-                </div>
-            </div>
-
-            <!-- Certification Item 5 -->
-            <div class="card" style="width: 18rem;">
-                <div class="card-body">
-                    <h5 class="card-title">Python Intermedio</h5>
-                    <p class="card-text">Issued Jun 2024 - Netzun</p>
-                    <p>Skills: Python (Programming Language)</p>
-                    <a href="https://www.linkedin.com/in/sara-dominguezr/details/certifications/1719357145986/single-media-viewer/?profileId=ACoAACkWugIBgGWWK4CX2JUd39JtvlGHResLNKk" class="btn btn-success" target="_blank">View Certification</a>
-                </div>
-            </div>
-
-            <!-- Certification Item 6 -->
-            <div class="card" style="width: 18rem;">
-                <div class="card-body">
-                    <h5 class="card-title">MySQL 5.6 Developer</h5>
-                    <p class="card-text">Issued Sep 2023, Expired Dec 2023 - Sapiencia</p>
-                    <p>Skills: Data Entry · Oracle Database · SQL · Data Analysis · MongoDB · Back-End Web Development · Microsoft SQL Server · Front-End Development</p>
-                    <a href="https://www.linkedin.com/in/sara-dominguezr/details/certifications/1635554661906/single-media-viewer/?profileId=ACoAACkWugIBgGWWK4CX2JUd39JtvlGHResLNKk" class="btn btn-success" target="_blank">View Certification</a>
-                </div>
-            </div>
-
-            <!-- Certification Item 7 -->
-            <div class="card" style="width: 18rem;">
-                <div class="card-body">
-                    <h5 class="card-title">Nodo bootcamp</h5>
-                    <p class="card-text">Issued Jul 2023 - PRAGMA</p>
-                    <p>Skills: Software Design · HTML · Software Development · Data Structures · Back-End Web Development · Django · Teamwork · Team Leadership · Front-End Development</p>
-                    <a href="https://www.linkedin.com/in/sara-dominguezr/details/certifications/1635554669069/single-media-viewer/?profileId=ACoAACkWugIBgGWWK4CX2JUd39JtvlGHResLNKk" class="btn btn-success" target="_blank">View Certification</a>
-                </div>
-            </div>
-
-            <!-- Certification Item 8 -->
-            <div class="card" style="width: 18rem;">
-                <div class="card-body">
-                    <h5 class="card-title">Fundamentos de desarrollo de aplicaciones</h5>
-                    <p class="card-text">Issued Aug 2019, Expired Sep 2019 - Escuela de Ingeniería de Antioquia</p>
-                    <p>Skills: Software Design · Software Development · Front-End Development</p>
-                    <a href="https://www.linkedin.com/in/sara-dominguezr/details/certifications/1704915133469/single-media-viewer/?profileId=ACoAACkWugIBgGWWK4CX2JUd39JtvlGHResLNKk" class="btn btn-success" target="_blank">View Certification</a>
-                </div>
-            </div>
-
-            <!-- Certification Item 9 -->
-            <div class="card" style="width: 18rem;">
-                <div class="card-body">
-                    <h5 class="card-title">Introduction to network management</h5>
-                    <p class="card-text">Issued Feb 2024, Expired Mar 2024 - Lacnic campus</p>
-                    <p>Skills: Telematics · Internet of Things (IoT)</p>
-                    <a href="https://www.linkedin.com/in/sara-dominguezr/details/certifications/1710288180102/single-media-viewer/?profileId=ACoAACkWugIBgGWWK4CX2JUd39JtvlGHResLNKk" class="btn btn-success" target="_blank">View Certification</a>
-                </div>
-            </div>
+      <div class="exp-item">
+        <div class="exp-meta">
+          <div class="exp-period">2025 — Present</div>
+          <div class="exp-company">Perficient</div>
+          <div class="exp-location">Colombia</div>
         </div>
+        <div class="exp-body">
+          <h3>QA Automator</h3>
+          <ul>
+            <li>Designed and implemented automated test scripts using Robot Framework and Selenium.</li>
+            <li>Improved software quality and reduced manual testing effort through automation.</li>
+            <li>Collaborated closely with development teams to identify and resolve defects.</li>
+          </ul>
+          <div class="exp-tags">
+            <span class="exp-tag">Robot Framework</span>
+            <span class="exp-tag">Selenium</span>
+            <span class="exp-tag">Playwright</span>
+            <span class="exp-tag">Cypress</span>
+            <span class="exp-tag">Python</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="exp-item">
+        <div class="exp-meta">
+          <div class="exp-period">2025</div>
+          <div class="exp-company">SURA</div>
+          <div class="exp-location">Colombia</div>
+        </div>
+        <div class="exp-body">
+          <h3>Data Science Intern</h3>
+          <ul>
+            <li>Developed data models and simulations for risk analysis and decision-making.</li>
+            <li>Built machine learning models for predictive analytics.</li>
+            <li>Used Python, R, and SQL for data processing, analysis, and visualization.</li>
+          </ul>
+          <div class="exp-tags">
+            <span class="exp-tag">Python</span>
+            <span class="exp-tag">R</span>
+            <span class="exp-tag">SQL</span>
+            <span class="exp-tag">Machine Learning</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="exp-item">
+        <div class="exp-meta">
+          <div class="exp-period">2023 — 2024</div>
+          <div class="exp-company">Smart Talent</div>
+          <div class="exp-location">Colombia · Remote</div>
+        </div>
+        <div class="exp-body">
+          <h3>Junior Software Developer</h3>
+          <ul>
+            <li>Developed and maintained company web applications with senior developers.</li>
+            <li>Collaborated with cross-functional teams to deliver superior user experiences.</li>
+            <li>Managed website maintenance while meeting deadlines efficiently.</li>
+          </ul>
+          <div class="exp-tags">
+            <span class="exp-tag">Python</span>
+            <span class="exp-tag">Django</span>
+            <span class="exp-tag">HTML/CSS</span>
+            <span class="exp-tag">JavaScript</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="exp-item">
+        <div class="exp-meta">
+          <div class="exp-period">2023 — 2024</div>
+          <div class="exp-company">Plynn</div>
+          <div class="exp-location">Colombia</div>
+        </div>
+        <div class="exp-body">
+          <h3>Software Developer</h3>
+          <ul>
+            <li>Automated learning and business processes through customized software solutions.</li>
+            <li>Developed and integrated solutions tailored to educational business needs.</li>
+          </ul>
+          <div class="exp-tags">
+            <span class="exp-tag">Python</span>
+            <span class="exp-tag">Automation</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="exp-item">
+        <div class="exp-meta">
+          <div class="exp-period">2021 — 2025</div>
+          <div class="exp-company">Universidad EAFIT</div>
+          <div class="exp-location">Medellín, Colombia</div>
+        </div>
+        <div class="exp-body">
+          <h3>Software Developer — Research</h3>
+          <ul>
+            <li>Web platform for mathematical epidemiology modeling.</li>
+            <li>Machine learning models for air quality analysis in Medellín.</li>
+            <li>3D global visualization map for air quality data.</li>
+          </ul>
+          <div class="exp-tags">
+            <span class="exp-tag">Python</span>
+            <span class="exp-tag">Flask</span>
+            <span class="exp-tag">ML</span>
+            <span class="exp-tag">3D Visualization</span>
+          </div>
+        </div>
+      </div>
+
     </div>
-</section>
-  
-<!-- Footer -->
-<footer class="footer" style="background-color: #5a4d41; color: white; padding-top: 2rem; padding-bottom: 2rem; margin-top: 5rem;">
-    <div class="container text-center">
-        <p>&copy; 2025 Sara Dominguez. Todos los derechos reservados.</p>
-        <p>Diseñado por <strong>Sara Dominguez</strong></p>
-        <p>Contacto: <a href="mailto:sara.robledo17@gmail.com" style="color: white;">sara.robledo17@gmail.com</a></p>
+  </section>
+
+  <!-- SKILLS -->
+  <section id="skills" class="skills-section">
+    <div class="section-label">03 — Technical Skills</div>
+    <h2 class="section-title">Tools I<br><em>work with.</em></h2>
+    <div class="skills-grid">
+      <div class="skill-card">
+        <span class="skill-icon">🐍</span>
+        <div class="skill-name">Python</div>
+        <div class="skill-desc">ML, AI, web development (Django/Flask), data analytics and automation.</div>
+        <div class="skill-bar-bg"><div class="skill-bar-fill" data-width="90"></div></div>
+        <div class="skill-level">90% — Advanced</div>
+      </div>
+      <div class="skill-card">
+        <span class="skill-icon">📊</span>
+        <div class="skill-name">R</div>
+        <div class="skill-desc">Data analytics, statistical modeling, prediction and visualization.</div>
+        <div class="skill-bar-bg"><div class="skill-bar-fill" data-width="75"></div></div>
+        <div class="skill-level">75% — Proficient</div>
+      </div>
+      <div class="skill-card">
+        <span class="skill-icon">🗄️</span>
+        <div class="skill-name">SQL / MySQL</div>
+        <div class="skill-desc">Database design, web integration, complex queries and data processing.</div>
+        <div class="skill-bar-bg"><div class="skill-bar-fill" data-width="70"></div></div>
+        <div class="skill-level">70% — Proficient</div>
+      </div>
+      <div class="skill-card">
+        <span class="skill-icon">🤖</span>
+        <div class="skill-name">Test Automation</div>
+        <div class="skill-desc">Robot Framework, Selenium, Playwright, Cypress — full test suite design.</div>
+        <div class="skill-bar-bg"><div class="skill-bar-fill" data-width="80"></div></div>
+        <div class="skill-level">80% — Advanced</div>
+      </div>
+      <div class="skill-card">
+        <span class="skill-icon">🧠</span>
+        <div class="skill-name">Machine Learning</div>
+        <div class="skill-desc">Predictive models, risk analysis, air quality and epidemiology models.</div>
+        <div class="skill-bar-bg"><div class="skill-bar-fill" data-width="75"></div></div>
+        <div class="skill-level">75% — Proficient</div>
+      </div>
+      <div class="skill-card">
+        <span class="skill-icon">☁️</span>
+        <div class="skill-name">AWS</div>
+        <div class="skill-desc">P2P networking, TCP/IP protocols, web deployment, leader election algorithms.</div>
+        <div class="skill-bar-bg"><div class="skill-bar-fill" data-width="60"></div></div>
+        <div class="skill-level">60% — Intermediate</div>
+      </div>
+      <div class="skill-card">
+        <span class="skill-icon">🌐</span>
+        <div class="skill-name">Web Dev</div>
+        <div class="skill-desc">HTML, CSS, JavaScript, Bootstrap — frontend and full-stack applications.</div>
+        <div class="skill-bar-bg"><div class="skill-bar-fill" data-width="85"></div></div>
+        <div class="skill-level">85% — Advanced</div>
+      </div>
+      <div class="skill-card">
+        <span class="skill-icon">☕</span>
+        <div class="skill-name">Java</div>
+        <div class="skill-desc">Backend development and web applications.</div>
+        <div class="skill-bar-bg"><div class="skill-bar-fill" data-width="50"></div></div>
+        <div class="skill-level">50% — Intermediate</div>
+      </div>
+      <div class="skill-card">
+        <span class="skill-icon">📐</span>
+        <div class="skill-name">MATLAB / C++</div>
+        <div class="skill-desc">Statistics, differential equations, real-time hardware interfaces and systems programming.</div>
+        <div class="skill-bar-bg"><div class="skill-bar-fill" data-width="60"></div></div>
+        <div class="skill-level">60% — Intermediate</div>
+      </div>
     </div>
-</footer>
+  </section>
 
+  <!-- PROJECTS -->
+  <section id="projects" class="projects">
+    <div class="section-label">04 — Projects</div>
+    <h2 class="section-title">Things I've<br><em>built.</em></h2>
+    <div class="projects-grid">
+      <div class="project-card">
+        <div class="project-img-area">🏺</div>
+        <div class="project-body">
+          <h3>Artenativo</h3>
+          <p>Web application in Flask for selling and auctioning Colombian handicrafts. Full e-commerce platform with auction mechanics and payment integration.</p>
+          <a href="https://github.com/sdominguer/ArteNativo2" target="_blank" class="project-link">View on GitHub →</a>
+        </div>
+      </div>
+      <div class="project-card">
+        <div class="project-img-area">🔷</div>
+        <div class="project-body">
+          <h3>Julia Diagrams</h3>
+          <p>Automatic class diagram generator for Julia source code. Parses code structure and renders UML-style visualizations.</p>
+          <a href="https://github.com/sdominguer/Diagrama_Julia" target="_blank" class="project-link">View on GitHub →</a>
+        </div>
+      </div>
+      <div class="project-card">
+        <div class="project-img-area">🌫️</div>
+        <div class="project-body">
+          <h3>Airedellin</h3>
+          <p>Air quality prediction models for Medellín using machine learning and 3D global visualization of environmental data.</p>
+          <a href="https://github.com/sdominguer/Airedellin-front" target="_blank" class="project-link">View on GitHub →</a>
+        </div>
+      </div>
+    </div>
+  </section>
 
+  <!-- CERTIFICATIONS -->
+  <section id="certifications" class="certifications">
+    <div class="section-label">05 — Certifications</div>
+    <h2 class="section-title">Credentials &<br><em>learning.</em></h2>
+    <div class="certs-grid">
+      <div class="cert-card">
+        <div class="cert-issuer">365 Careers — 2025</div>
+        <div class="cert-name">Data Analyst Bootcamp</div>
+        <div class="cert-date">2025</div>
+      </div>
+      <div class="cert-card">
+        <div class="cert-issuer">365 Careers — 2025</div>
+        <div class="cert-name">Data Science Certificate</div>
+        <div class="cert-date">2025</div>
+      </div>
+      <div class="cert-card">
+        <div class="cert-issuer">Udemy — 2025</div>
+        <div class="cert-name">Robot Framework Test Automation</div>
+        <div class="cert-date">2025</div>
+      </div>
+      <div class="cert-card">
+        <div class="cert-issuer">Udemy — 2025</div>
+        <div class="cert-name">Cypress Modern Automation Testing</div>
+        <div class="cert-date">2025</div>
+      </div>
+      <div class="cert-card">
+        <div class="cert-issuer">Udemy — 2025</div>
+        <div class="cert-name">Playwright JS/TS Automation Testing</div>
+        <div class="cert-date">2025</div>
+      </div>
+      <div class="cert-card">
+        <div class="cert-issuer">Udemy — 2025</div>
+        <div class="cert-name">SQL Bootcamp + Clean Code</div>
+        <div class="cert-date">2025</div>
+      </div>
+      <div class="cert-card">
+        <div class="cert-issuer">365 Careers — 2025</div>
+        <div class="cert-name">AI Ethics & Intro to AI</div>
+        <div class="cert-date">2025</div>
+      </div>
+      <div class="cert-card">
+        <div class="cert-issuer">Netzun — 2024</div>
+        <div class="cert-name">Advanced Django + Advanced Python</div>
+        <div class="cert-date">2024</div>
+        <a href="https://www.linkedin.com/in/sara-dominguezr/details/certifications/" target="_blank" class="cert-link">View ↗</a>
+      </div>
+      <div class="cert-card">
+        <div class="cert-issuer">EAFIT — 2024</div>
+        <div class="cert-name">Advanced Python Development</div>
+        <div class="cert-date">2024</div>
+      </div>
+      <div class="cert-card">
+        <div class="cert-issuer">Netzun — 2024</div>
+        <div class="cert-name">Git & GitHub Professional</div>
+        <div class="cert-date">2024</div>
+      </div>
+      <div class="cert-card">
+        <div class="cert-issuer">PRAGMA — 2023</div>
+        <div class="cert-name">Nodo Bootcamp (Full Stack)</div>
+        <div class="cert-date">2023</div>
+      </div>
+      <div class="cert-card">
+        <div class="cert-issuer">Sapiencia — 2023</div>
+        <div class="cert-name">MySQL 5.6 Developer</div>
+        <div class="cert-date">2023</div>
+      </div>
+    </div>
+  </section>
 
+  <!-- RESEARCH -->
+  <section class="research">
+    <div class="section-label">06 — Research & Extracurricular</div>
+    <h2 class="section-title">Academic<br><em>contributions.</em></h2>
+    <div class="research-grid">
+      <div class="research-card">
+        <div class="year">2023 — PRESENT</div>
+        <h3>Machine Learning Research Seedbed</h3>
+        <p>Active member of EAFIT's ML research group. Exploring applications of machine learning to real-world environmental and social problems.</p>
+      </div>
+      <div class="research-card">
+        <div class="year">2023</div>
+        <h3>Software Engineering Research Seedbed</h3>
+        <p>Contributed to applied software engineering research, developing tools and methodologies in collaboration with faculty and peers.</p>
+      </div>
+      <div class="research-card">
+        <div class="year">2024</div>
+        <h3>Research Project Monitor — Mathematical Epidemiology</h3>
+        <p>Supported research activities in mathematical epidemiology modeling, including platform development and simulation design.</p>
+      </div>
+      <div class="research-card">
+        <div class="year">2022 — 2023</div>
+        <h3>Library Monitor + Cultural Volunteering</h3>
+        <p>Worked as a library monitor at EAFIT and participated in cultural and social volunteering initiatives within the university community.</p>
+      </div>
+    </div>
+  </section>
 
-  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <!-- ACHIEVEMENTS -->
+  <section class="achievements">
+    <h2>Award-winning work.</h2>
+    <div class="awards-row">
+      <div class="award-item">
+        <span class="award-icon">🏆</span>
+        <span class="award-name">Best Inventive Project</span>
+        <span class="award-year">2023</span>
+      </div>
+      <div class="award-item">
+        <span class="award-icon">🏆</span>
+        <span class="award-name">Best Inventive Project</span>
+        <span class="award-year">2024</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER / CONTACT -->
+  <footer id="contact">
+    <div class="footer-left">
+      <h2>Let's work<br>together.</h2>
+      <p>I'm currently open to new opportunities in software development, data science, and QA automation. Feel free to reach out.</p>
+      <a href="mailto:sara.robledo17@gmail.com" class="footer-email">sara.robledo17@gmail.com</a>
+      <span class="footer-phone">+57 315 524 9011</span>
+    </div>
+    <div class="footer-right">
+      <div class="social-links">
+        <a href="https://www.linkedin.com/in/sara-dominguezr" target="_blank" class="social-link"><span class="arrow">↗</span> LinkedIn</a>
+        <a href="https://github.com/sdominguer" target="_blank" class="social-link"><span class="arrow">↗</span> GitHub</a>
+        <a href="https://sdominguer.github.io/HV/" target="_blank" class="social-link"><span class="arrow">↗</span> Portfolio</a>
+      </div>
+      <p>© 2025 Sara Domínguez Robledo</p>
+    </div>
+  </footer>
+
   <script>
-    AOS.init();
+    // ── CURSOR ──
+    const cursor = document.getElementById('cursor');
+    const ring = document.getElementById('cursorRing');
+    let mx = 0, my = 0, rx = 0, ry = 0;
+    document.addEventListener('mousemove', e => { mx = e.clientX; my = e.clientY; });
+    (function animate() {
+      cursor.style.transform = `translate(${mx - 6}px, ${my - 6}px)`;
+      rx += (mx - rx) * 0.12;
+      ry += (my - ry) * 0.12;
+      ring.style.transform = `translate(${rx - 18}px, ${ry - 18}px)`;
+      requestAnimationFrame(animate);
+    })();
+
+    // ── INTERSECTION OBSERVER ──
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry, i) => {
+        if (entry.isIntersecting) {
+          setTimeout(() => {
+            entry.target.classList.add('visible');
+            // animate skill bars
+            const bar = entry.target.querySelector('.skill-bar-fill');
+            if (bar) bar.style.width = bar.dataset.width + '%';
+          }, i * 80);
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.exp-item, .skill-card, .project-card, .cert-card').forEach(el => {
+      observer.observe(el);
+    });
+
+    // Trigger skill bars for already-visible ones
+    const skillObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.querySelectorAll('.skill-bar-fill').forEach(bar => {
+            bar.style.width = bar.dataset.width + '%';
+          });
+        }
+      });
+    });
+    document.querySelectorAll('.skills-section').forEach(el => skillObserver.observe(el));
   </script>
-  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
 </body>
 </html>
