@@ -35,22 +35,23 @@
 
     /* ── CUSTOM CURSOR ── */
     .cursor {
-      width: 12px; height: 12px;
+      width: 8px; height: 8px;
       background: var(--terracotta);
       border-radius: 50%;
-      position: fixed; top: 0; left: 0;
+      position: fixed;
+      top: -20px; left: -20px;
       pointer-events: none; z-index: 9999;
-      transition: transform 0.15s ease;
-      mix-blend-mode: multiply;
+      will-change: left, top;
     }
     .cursor-ring {
-      width: 36px; height: 36px;
+      width: 28px; height: 28px;
       border: 1.5px solid var(--terracotta);
       border-radius: 50%;
-      position: fixed; top: 0; left: 0;
+      position: fixed;
+      top: -20px; left: -20px;
       pointer-events: none; z-index: 9998;
-      transition: transform 0.35s ease, opacity 0.2s;
-      opacity: 0.5;
+      opacity: 0.6;
+      will-change: left, top;
     }
 
     /* ── NAV ── */
@@ -1220,7 +1221,7 @@
     <div class="footer-left">
       <h2>Let's work<br>together.</h2>
       <p>I'm currently open to new opportunities in software development, data science, and QA automation. Feel free to reach out.</p>
-      <a href="mailto:sara.robledo17@gmail.com" class="footer-email">sara.robledo17@gmail.com</a>
+      <a href="/cdn-cgi/l/email-protection#b0c3d1c2d19ec2dfd2dcd5d4df8187f0d7ddd1d9dc9ed3dfdd" class="footer-email"><span class="__cf_email__" data-cfemail="c7b4a6b5a6e9b5a8a5aba2a3a8f6f087a0aaa6aeabe9a4a8aa">[email&#160;protected]</span></a>
       <span class="footer-phone">+57 315 524 9011</span>
     </div>
     <div class="footer-right">
@@ -1233,19 +1234,16 @@
     </div>
   </footer>
 
-  <script>
+  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
     // ── CURSOR ──
     const cursor = document.getElementById('cursor');
     const ring = document.getElementById('cursorRing');
-    let mx = 0, my = 0, rx = 0, ry = 0;
-    document.addEventListener('mousemove', e => { mx = e.clientX; my = e.clientY; });
-    (function animate() {
-      cursor.style.transform = `translate(${mx - 6}px, ${my - 6}px)`;
-      rx += (mx - rx) * 0.12;
-      ry += (my - ry) * 0.12;
-      ring.style.transform = `translate(${rx - 18}px, ${ry - 18}px)`;
-      requestAnimationFrame(animate);
-    })();
+    document.addEventListener('mousemove', e => {
+      cursor.style.left = (e.clientX - 4) + 'px';
+      cursor.style.top  = (e.clientY - 4) + 'px';
+      ring.style.left   = (e.clientX - 14) + 'px';
+      ring.style.top    = (e.clientY - 14) + 'px';
+    });
 
     // ── INTERSECTION OBSERVER ──
     const observer = new IntersectionObserver((entries) => {
@@ -1270,13 +1268,4 @@
     const skillObserver = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
-          entry.target.querySelectorAll('.skill-bar-fill').forEach(bar => {
-            bar.style.width = bar.dataset.width + '%';
-          });
-        }
-      });
-    });
-    document.querySelectorAll('.skills-section').forEach(el => skillObserver.observe(el));
-  </script>
-</body>
-</html>
+          entry.target.querySelectorAll
